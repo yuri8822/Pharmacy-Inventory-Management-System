@@ -65,7 +65,7 @@
             </MenuBar>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onButtonClick" text="Button" />
+                  <Button mnemonicParsing="false" onMouseClicked="#onButtonClick" text="Button" />
                </children></HBox>
          </children>
       </VBox>
