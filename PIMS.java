@@ -1,4 +1,4 @@
-package Pharmacy-Inventory-Management-System;
+package PharmacyInventoryManagementSystem;
 
 public class PIMS 
 {
