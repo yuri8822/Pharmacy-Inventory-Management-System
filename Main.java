@@ -14,7 +14,7 @@ public class Main extends Application
     public void start(Stage primaryStage) throws IOException 
     {
         Parent root = FXMLLoader.load(getClass().getResource("PIMS.fxml"));      
-        Scene HP = new Scene(root, 800, 500);
+        Scene HP = new Scene(root);
         primaryStage.setScene(HP);
         primaryStage.setTitle("PIMS");
         primaryStage.show();    
