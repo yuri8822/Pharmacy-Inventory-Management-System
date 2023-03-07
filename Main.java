@@ -1,5 +1,7 @@
 package PharmacyInventoryManagementSystem;
 
+import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,20 +11,18 @@ import javafx.stage.Stage;
 public class Main extends Application
 {
     @Override
-    public void start(Stage primaryStage) throws Exception 
+    public void start(Stage primaryStage) throws IOException 
     {
-        Parent root = FXMLLoader.load(getClass().getResource("PIMS.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("PIMS.fxml"));      
+        Scene HP = new Scene(root, 800, 500);
+        primaryStage.setScene(HP);
         primaryStage.setTitle("PIMS");
-
-        Scene newScene = new Scene(root, 800, 500);
-        primaryStage.setScene(newScene);
-        primaryStage.show();
+        primaryStage.show();    
     }
     public static void main(String[] args) 
     {
         Database db = new Database();
 
-        launch(args);  
-        
-    }   
+        launch(args);        
+    }    
 }

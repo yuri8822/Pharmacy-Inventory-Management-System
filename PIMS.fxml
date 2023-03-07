@@ -63,11 +63,11 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button mnemonicParsing="false" onMouseClicked="#onButtonClick" text="Button" />
-               </children></HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" />
          </children>
       </VBox>
    </top>
+   <center>
+      <Button mnemonicParsing="false" onAction="#showInv" onMouseClicked="#onButtonClick" text="Button" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>

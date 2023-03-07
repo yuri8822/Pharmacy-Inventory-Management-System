@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 
-public class PIMS 
+public class Inventory 
 {
     Stage stage;
     Scene scene;
@@ -18,14 +18,15 @@ public class PIMS
     public void onButtonClick() throws IOException
     {
         System.out.println("Hey fam");
-    }
-    public void showInv(ActionEvent event) throws IOException
+    }  
+    public void showHP(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Inventory.fxml"));        
+        Parent root = FXMLLoader.load(getClass().getResource("PIMS.fxml"));        
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setTitle("Inventory");
         stage.setScene(scene);
         stage.show();  
     }
+      
 }
