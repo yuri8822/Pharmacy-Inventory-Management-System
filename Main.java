@@ -11,9 +11,9 @@ import javafx.stage.Stage;
 public class Main extends Application
 {
     @Override
-    public void start(Stage primaryStage) throws IOException 
+    public void start(Stage primaryStage) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("ReviewFeedback.fxml"));      
+        Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));      
         Scene HP = new Scene(root);
         primaryStage.setScene(HP);
         primaryStage.setTitle("Dashboard");
