@@ -13,10 +13,10 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage) throws IOException 
     {
-        Parent root = FXMLLoader.load(getClass().getResource("PIMS.fxml"));      
+        Parent root = FXMLLoader.load(getClass().getResource("ReviewFeedback.fxml"));      
         Scene HP = new Scene(root);
         primaryStage.setScene(HP);
-        primaryStage.setTitle("PIMS");
+        primaryStage.setTitle("Dashboard");
         primaryStage.show();    
     }
     public static void main(String[] args) 

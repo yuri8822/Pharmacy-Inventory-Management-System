@@ -4,12 +4,12 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.Node;
 import javafx.stage.Stage;
 
-public class PIMS 
+public class CheckAv 
 {
     Stage stage;
     Scene scene;
@@ -19,13 +19,13 @@ public class PIMS
     {
         System.out.println("Hey fam");
     }
-    public void showInv(ActionEvent event) throws IOException
+    public void showLogin(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Inventory.fxml"));        
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));        
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("Inventory");
+        stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();  
-    }
+    }      
 }
