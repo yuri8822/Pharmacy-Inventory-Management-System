@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
@@ -15,11 +13,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="752.0" prefWidth="1204.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PharmacyInventoryManagementSystem.Dashboard">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PharmacyInventoryManagementSystem.Dashboard">
    <children>
-      <Pane layoutX="275.0" layoutY="25.0" prefHeight="177.0" prefWidth="940.0" style="-fx-background-color: blue;">
+      <Pane layoutX="275.0" layoutY="-1.0" prefHeight="490.0" prefWidth="590.0" style="-fx-background-color: #62b9a7;">
          <children>
-            <MenuButton layoutX="838.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-radius: 15; -fx-background-color: #59578d;" text="User" textFill="WHITE">
+            <MenuButton layoutX="486.0" layoutY="25.0" mnemonicParsing="false" style="-fx-background-radius: 15; -fx-background-color: #59578d;" text="User" textFill="WHITE">
               <items>
                 <MenuItem mnemonicParsing="false" text="Pharmacist" />
                   <MenuItem mnemonicParsing="false" text="Salesman" />
@@ -40,30 +38,27 @@
                   </Lighting>
                </effect>
             </MenuButton>
-         </children>
-         <effect>
-            <InnerShadow radius="15.8625" width="44.45" />
-         </effect>
-      </Pane>
-      <Pane layoutX="271.0" layoutY="164.0" prefHeight="591.0" prefWidth="940.0">
-         <children>
-            <TableView layoutX="9.0" layoutY="35.0" prefHeight="553.0" prefWidth="924.0">
+            <TableView layoutX="3.0" layoutY="115.0" prefHeight="376.0" prefWidth="587.0" style="-fx-background-color: #62b9a8;">
               <columns>
                 <TableColumn prefWidth="75.0" text="Med ID" />
                 <TableColumn prefWidth="75.0" text="Name" />
                   <TableColumn prefWidth="75.0" text="Category" />
                   <TableColumn prefWidth="106.0" text="Purchase Price" />
                   <TableColumn text="Selling Price" />
-                  <TableColumn prefWidth="108.0" text="Formula Name" />
-                  <TableColumn prefWidth="102.0" text="Expiry Date" />
+                  <TableColumn minWidth="0.0" prefWidth="101.0" text="Formula Name" />
+                  <TableColumn prefWidth="109.0" text="Expiry Date" />
               </columns>
             </TableView>
-         </children></Pane>
-      <Pane layoutY="27.0" prefHeight="727.0" prefWidth="280.0" style="-fx-background-color: green;">
+         </children>
+         <effect>
+            <InnerShadow radius="15.8625" width="44.45" />
+         </effect>
+      </Pane>
+      <Pane layoutY="-5.0" prefHeight="496.0" prefWidth="280.0" style="-fx-background-color: #a3d7ca;">
          <children>
-            <Button depthTest="DISABLE" layoutX="15.0" layoutY="202.0" mnemonicParsing="false" onAction="#showRestockInv" prefHeight="52.0" prefWidth="250.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Restock Inventory" textFill="WHITE">
+            <Button depthTest="DISABLE" layoutX="66.0" layoutY="189.0" mnemonicParsing="false" onAction="#showRestockInv" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Restock Inventory" textFill="WHITE">
                <font>
-                  <Font name="Century Gothic Bold" size="25.0" />
+                  <Font name="Century Gothic Bold" size="13.0" />
                </font>
                <effect>
                   <Lighting>
@@ -76,9 +71,9 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button layoutX="15.0" layoutY="304.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="250.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Create Order" textFill="WHITE">
+            <Button layoutX="66.0" layoutY="248.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Create Order" textFill="WHITE">
                <font>
-                  <Font name="Century Gothic Bold" size="25.0" />
+                  <Font name="Century Gothic Bold" size="13.0" />
                </font>
                <effect>
                   <Lighting>
@@ -93,27 +88,8 @@
             </Button>
          </children>
          <effect>
-            <InnerShadow radius="6.335" width="6.34" />
+            <InnerShadow height="10.004999999999999" radius="3.5862499999999997" width="6.34" />
          </effect>
       </Pane>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="1204.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
    </children>
 </AnchorPane>

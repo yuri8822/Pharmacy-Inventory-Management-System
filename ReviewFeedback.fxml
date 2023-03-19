@@ -6,29 +6,119 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="490.0" prefWidth="860.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PharmacyInventoryManagementSystem.ReviewFeedback">
+<AnchorPane prefHeight="490.0" prefWidth="860.0" style="-fx-background-color: #a3d7ca;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PharmacyInventoryManagementSystem.ReviewFeedback">
     <children>
-        <Button layoutX="50.0" layoutY="150.0" onAction="#showGenerateRep" text="Generate Reports" />
-        <Button layoutX="50.0" layoutY="200.0" onAction="#showOrderStock" text="Order Stock" />
-        <MenuButton layoutX="730.0" layoutY="30.0" text="User">
-            <items>
-                <MenuItem fx:id="managerMenuItem" text="Manager" />
-                <MenuItem fx:id="pharmacistMenuItem" text="Pharmacist" />
-                <MenuItem fx:id="adminMenuItem" text="Admin" />
-                <MenuItem fx:id="salesmanMenuItem" text="Salesman" />
-            </items>
-        </MenuButton>
-        <TableView layoutX="230.0" layoutY="151.0">
+        <TableView layoutX="230.0" layoutY="129.0" prefHeight="302.0" prefWidth="630.0" style="-fx-background-color: #62b9a8;">
             <columns>
                 <TableColumn fx:id="userColumn" prefWidth="75.0" text="User" />
                 <TableColumn fx:id="feedbackColumn" prefWidth="75.0" text="Feedback" />
             </columns>
         </TableView>
-        <Label layoutX="90.0" layoutY="20.0" prefHeight="40.0" prefWidth="190.0" text="Review Feedback" />
-        <Button layoutX="725.0" layoutY="446.0" text="Open Feedback" />
-        <Button layoutX="51.0" layoutY="245.0" text="Review Feedback" />
-        <Button layoutX="51.0" layoutY="286.0" onAction="#showManageEmp" text="Manage Employees" />
+        <Label layoutX="46.0" layoutY="30.0" prefHeight="40.0" prefWidth="220.0" text="Review Feedback" textFill="#189780">
+         <font>
+            <Font name="Gill Sans MT Bold" size="24.0" />
+         </font></Label>
+      <Button depthTest="DISABLE" layoutX="31.0" layoutY="170.0" mnemonicParsing="false" onAction="#showGenerateRep" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Generate Reports" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="61.55" elevation="111.21" />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Button depthTest="DISABLE" layoutX="31.0" layoutY="227.0" mnemonicParsing="false" onAction="#showOrderStock" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Order Stock" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="61.55" elevation="111.21" />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Button depthTest="DISABLE" layoutX="31.0" layoutY="341.0" mnemonicParsing="false" onAction="#showManageEmp" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Manage Employees" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="61.55" elevation="111.21" />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Button depthTest="DISABLE" layoutX="31.0" layoutY="283.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Review Feedback" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="61.55" elevation="111.21" />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <Button depthTest="DISABLE" layoutX="684.0" layoutY="439.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Open Feedback" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="61.55" elevation="111.21" />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <MenuButton layoutX="743.0" layoutY="30.0" mnemonicParsing="false" style="-fx-background-radius: 15; -fx-background-color: #59578d;" text="User" textFill="WHITE">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Pharmacist" />
+            <MenuItem mnemonicParsing="false" text="Salesman" />
+            <MenuItem mnemonicParsing="false" text="Admin" />
+            <MenuItem mnemonicParsing="false" text="Manager" />
+         </items>
+         <font>
+            <Font name="Century Gothic Bold" size="16.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant azimuth="61.55" elevation="111.21" />
+               </light>
+            </Lighting>
+         </effect>
+      </MenuButton>
     </children>
 </AnchorPane>
