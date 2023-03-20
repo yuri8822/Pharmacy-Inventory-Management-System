@@ -21,11 +21,12 @@
                 <TableColumn fx:id="productNameColumn" prefWidth="180.0" text="Product Name" />
             </columns>
         </TableView>
-        <TextField layoutX="80.0" layoutY="100.0" prefWidth="200.0" promptText="Med ID" />
-        <TextField layoutX="80.0" layoutY="140.0" prefWidth="200.0" promptText="Formula" />
-        <TextField layoutX="80.0" layoutY="175.0" prefWidth="200.0" promptText="Region" />
+        <TextField layoutX="80.0" layoutY="100.0" prefWidth="200.0" promptText="Med ID" style="-fx-background-radius: 15;" />
+        <TextField layoutX="80.0" layoutY="140.0" prefWidth="200.0" promptText="Formula" style="-fx-background-radius: 15;" />
+        <TextField layoutX="80.0" layoutY="175.0" prefWidth="200.0" promptText="Region" style="-fx-background-radius: 15;" />
         <Button layoutX="140.0" layoutY="220.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" text="-" />
         <Button layoutX="270.0" layoutY="220.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" text="+" />
         <TextField layoutX="180.0" layoutY="220.0" prefHeight="25.0" prefWidth="70.0" promptText="Quantity" />
+      <Button layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#showDashboard" text="Back" />
     </children>
 </AnchorPane>

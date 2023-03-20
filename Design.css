@@ -1,0 +1,23 @@
+
+.AnchorPane
+{
+  -fx-background-color:  #a3d7ca
+}
+
+.Button
+{
+  -fx-background-color: rgb(90, 91, 202);
+  -fx-background-radius: 15;
+}
+
+.Button:hover
+{
+  -fx-background-color: rgb(120, 120, 221);
+}
+
+.Button:pressed
+{
+  -fx-translate-x: 1;
+  -fx-translate-y: 1;
+  -fx-background-color: rgb(54, 55, 110);
+}

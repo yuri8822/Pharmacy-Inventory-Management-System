@@ -26,6 +26,6 @@ public class GenerateRep
         scene = new Scene(root);
         stage.setTitle("Review Feedback");
         stage.setScene(scene);
-        stage.show();  
+        stage.show();
     }      
 }

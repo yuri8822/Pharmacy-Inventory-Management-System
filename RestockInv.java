@@ -19,13 +19,13 @@ public class RestockInv
     {
         System.out.println("Hey fam");
     }
-    public void showLogin(ActionEvent event) throws IOException
+    public void showDashboard(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));        
+        Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));        
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("Login");
+        stage.setTitle("Dashboard");
         stage.setScene(scene);
-        stage.show();  
+        stage.show();
     }      
 }

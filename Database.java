@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class Database 
 {
-    Database()
+    public void Start()
     {
         try 
         {
