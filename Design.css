@@ -6,6 +6,9 @@
 
 .Button
 {
+  -fx-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  -fx-font-style: normal;
+  -fx-font-size: 16px;
   -fx-background-color: rgb(90, 91, 202);
   -fx-background-radius: 15;
 }

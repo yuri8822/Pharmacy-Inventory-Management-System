@@ -8,6 +8,16 @@ create table pims.Medicine (
     BatchNo INT
 );
 
-INSERT INTO pims.Medicine VALUES ( 1, 'Panadol', 'Paracetomol', 1);
-INSERT INTO pims.Medicine VALUES ( 2, 'Strepsil', 'lozenges', 1);
+CREATE TABLE pims.Accounts (
+	username VARCHAR(255) PRIMARY KEY,
+    password VARCHAR(255) NOT NULL,
+    accountType ENUM('Admin', 'Manager', 'Pharmacist', 'Salesman')    
+);
 
+INSERT INTO pims.Medicine VALUES
+ (1, 'Panadol', 'Paracetomol', 1),
+ (2, 'Strepsil', 'lozenges', 1);
+
+INSERT INTO pims.Accounts VALUES
+ ('Umar123', '1234', 'Admin'),
+ ('Talal', '2468', 'Manager');

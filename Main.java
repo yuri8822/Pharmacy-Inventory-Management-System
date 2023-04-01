@@ -1,6 +1,7 @@
 package PharmacyInventoryManagementSystem;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,19 +11,20 @@ import javafx.stage.Stage;
 
 public class Main extends Application
 {
+    static public Database db;
+
     @Override
     public void start(Stage primaryStage) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));      
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));      
         Scene HP = new Scene(root);
         primaryStage.setScene(HP);
-        primaryStage.setTitle("Dashboard");
-        primaryStage.show();    
+        primaryStage.setTitle("Login");
+        primaryStage.show();
     }
-    public static void main(String[] args) 
+    public static void main(String[] args) throws ClassNotFoundException, SQLException 
     {
-        Database db = new Database();
-        db.Start();
+        db = new Database();
 
         launch(args);        
     }

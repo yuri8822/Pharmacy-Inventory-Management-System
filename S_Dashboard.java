@@ -11,7 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
 import javafx.stage.Stage;
 
-public class Dashboard 
+public class S_Dashboard 
 {
     Stage stage;
     Scene scene;
@@ -31,24 +31,4 @@ public class Dashboard
         stage.setScene(scene);
         stage.show();  
     }
-    public void onPharma(ActionEvent event) throws IOException
-    {
-        root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
-        User.setText("Pharma");
-    }      
-    public void onSales(ActionEvent event) throws IOException
-    {
-        root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
-        User.setText("Saleman");
-    }      
-    public void onMan(ActionEvent event) throws IOException
-    {
-        root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
-        User.setText("Manager");
-    }      
-    public void onAdmin(ActionEvent event) throws IOException
-    {
-        root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
-        User.setText("Admin");
-    }      
 }
