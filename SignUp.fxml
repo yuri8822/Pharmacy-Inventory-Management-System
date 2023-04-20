@@ -19,7 +19,7 @@
             <Font name="Century Gothic Bold" size="20.0" />
          </font>
       </Button>
-      <TextField layoutX="100.0" layoutY="170.0" promptText="User Name">
+      <TextField fx:id="usernameField" layoutX="100.0" layoutY="170.0" promptText="User Name">
          <font>
             <Font size="16.0" />
          </font>
@@ -48,15 +48,17 @@
             <Font name="Rockwell Bold" size="36.0" />
          </font>
       </Label>
-      <PasswordField layoutX="100.0" layoutY="220.0" prefHeight="35.0" prefWidth="198.0" promptText="Password">
+      <PasswordField fx:id="passwordField" layoutX="100.0" layoutY="220.0" prefHeight="35.0" prefWidth="198.0" promptText="Password">
          <font>
             <Font size="16.0" />
          </font>
       </PasswordField>
-      <MenuButton layoutX="166.0" layoutY="272.0" mnemonicParsing="false" styleClass="Button" text="Account Type" textFill="WHITE">
+      <MenuButton fx:id="userType" layoutX="166.0" layoutY="272.0" mnemonicParsing="false" styleClass="Button" text="Account Type" textFill="WHITE">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem mnemonicParsing="false" onAction="#onAdmin" text="Admin" />
+          <MenuItem mnemonicParsing="false" onAction="#onManager" text="Manager" />
+            <MenuItem mnemonicParsing="false" onAction="#onPharmacist" text="Pharmacist" />
+            <MenuItem mnemonicParsing="false" onAction="#onSalesman" text="Salesman" />
         </items>
       </MenuButton>
    </children>

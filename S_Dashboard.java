@@ -22,13 +22,32 @@ public class S_Dashboard
     {
         System.out.println("Hey fam");
     }
-    public void showRestockInv(ActionEvent event) throws IOException
+    public void showProcessSale(ActionEvent event) throws IOException
     {    
-        root = FXMLLoader.load(getClass().getResource("RestockInv.fxml"));   
+        // What page will this show:
+
+        // root = FXMLLoader.load(getClass().getResource("A-M-P-Inventory.fxml"));
+        // stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        // scene = new Scene(root);
+        // stage.setTitle("Inventory");
+        // stage.setScene(scene);
+        // stage.show();  
+    }
+    public void showInventory(ActionEvent event) throws IOException
+    {    
+        root = FXMLLoader.load(getClass().getResource("A-M-P-Inventory.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("Restock Inventory");
+        stage.setTitle("Inventory");
         stage.setScene(scene);
         stage.show();  
+    }
+    public void SignOut(ActionEvent event) throws IOException
+    {    
+        // What does SignOut do:
+    }
+    public void Search(ActionEvent event) throws IOException
+    {    
+        // What does Search do:
     }
 }

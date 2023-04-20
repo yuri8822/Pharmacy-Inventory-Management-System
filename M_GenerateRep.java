@@ -9,7 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class CheckAv 
+public class M_GenerateRep 
 {
     Stage stage;
     Scene scene;
@@ -19,13 +19,13 @@ public class CheckAv
     {
         System.out.println("Hey fam");
     }
-    public void showLogin(ActionEvent event) throws IOException
+    public void showReviewFeedback(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));        
+        Parent root = FXMLLoader.load(getClass().getResource("ReviewFeedback.fxml"));        
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-        stage.setTitle("Login");
+        stage.setTitle("Review Feedback");
         stage.setScene(scene);
-        stage.show();  
+        stage.show();
     }      
 }
