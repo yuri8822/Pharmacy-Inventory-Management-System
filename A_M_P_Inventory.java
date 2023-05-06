@@ -3,8 +3,6 @@ package PharmacyInventoryManagementSystem;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -41,4 +39,9 @@ public class A_M_P_Inventory
     {
         // What does Search do:
     }
+    public void Back(ActionEvent event) throws IOException
+    {
+        // back depends on which user type accessed the inventory
+    }
+
 }

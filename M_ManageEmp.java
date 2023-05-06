@@ -9,7 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class M_GenerateRep 
+public class M_ManageEmp
 {
     Stage stage;
     Scene scene;
@@ -23,17 +23,17 @@ public class M_GenerateRep
         stage.setTitle("Dashboard");
         stage.setScene(scene);
         stage.show();  
-    }      
-    public void Print(ActionEvent event) throws IOException
+    }  
+    public void Add(ActionEvent event) throws IOException
     {
-        // What will Print do?
-    }      
-    public void Copy_To_Clipboard(ActionEvent event) throws IOException
+        
+    }
+    public void Update(ActionEvent event) throws IOException
     {
-        // What will Copy_To_Clipboard do?
-    }      
-    public void Generate(ActionEvent event) throws IOException
+        
+    }
+    public void Remove(ActionEvent event) throws IOException
     {
-        // What will Generate do?
-    }      
+
+    }
 }

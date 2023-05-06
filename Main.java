@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 public class Main extends Application
 {
     static public Database db;
+    static public AccountsList accountsList;
 
     @Override
     public void start(Stage primaryStage) throws IOException
@@ -25,7 +26,8 @@ public class Main extends Application
     public static void main(String[] args) throws ClassNotFoundException, SQLException 
     {
         db = new Database();
+        accountsList = new AccountsList();
 
-        launch(args);        
+        launch(args);
     }
 }

@@ -29,15 +29,55 @@ public class Login
     public void LogIn(ActionEvent event) throws SQLException, IOException
     {
         // add cases for the other types of users too:
+        String userType;
         
         if (Main.db.hasUsername(usernameField.getText()))
         {
-            root = FXMLLoader.load(getClass().getResource("P-Dashboard.fxml"));        
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setTitle("Dashboard");
-            stage.setScene(scene);
-            stage.show();  
+            userType = Main.db.getUserType(usernameField.getText());
+
+            // System.out.print(userType);
+            
+            switch (userType) 
+            {
+                case "Admin":
+                    root = FXMLLoader.load(getClass().getResource("P-Dashboard.fxml"));        
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setTitle("Dashboard");
+                    stage.setScene(scene);
+                    stage.show();  
+                    break;
+                
+                case "Pharmacist":
+                    root = FXMLLoader.load(getClass().getResource("P-Dashboard.fxml"));        
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setTitle("Dashboard");
+                    stage.setScene(scene);
+                    stage.show();  
+                    break;
+                
+                case "Salesman":
+                    root = FXMLLoader.load(getClass().getResource("S-Dashboard.fxml"));        
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setTitle("Dashboard");
+                    stage.setScene(scene);
+                    stage.show();  
+                    break;
+                
+                case "Manager":
+                    root = FXMLLoader.load(getClass().getResource("M-Dashboard.fxml"));        
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setTitle("Dashboard");
+                    stage.setScene(scene);
+                    stage.show();  
+                    break;
+            
+                default:
+                    break;
+            }
         }
         // Add alternative code (error message that user doesnt exist):
     }         
