@@ -1,8 +1,4 @@
 {
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "f:\\Java Files\\mysql-connector-j-8.0.32.jar"
-    ],
     "sqltools.connections": [
         {
             "mysqlOptions": {
@@ -17,5 +13,9 @@
             "username": "root",
             "password": "1234"
         }
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "f:\\Java Files\\mysql-connector-j-8.0.32.jar"
     ]
 }

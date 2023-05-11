@@ -1,11 +1,11 @@
-package PharmacyInventoryManagementSystem.UI_Controllers;
+package UI_Controllers;
 
 import java.io.IOException;
 
-import PharmacyInventoryManagementSystem.*;
+import Source.*;
 import javafx.event.ActionEvent;
 
-public class M_GenerateRep 
+public class M_GenerateRep
 {
 
     public void Back(ActionEvent event) throws IOException

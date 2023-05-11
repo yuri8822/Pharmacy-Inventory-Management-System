@@ -1,4 +1,4 @@
-package PharmacyInventoryManagementSystem;
+package Source;
 
 public class SessionManager
 {

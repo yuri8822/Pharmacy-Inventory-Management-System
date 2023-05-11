@@ -1,8 +1,8 @@
-package PharmacyInventoryManagementSystem.UI_Controllers;
+package UI_Controllers;
 
 import java.io.IOException;
 
-import PharmacyInventoryManagementSystem.*;
+import Source.*;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

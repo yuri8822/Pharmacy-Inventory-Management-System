@@ -1,4 +1,4 @@
-package PharmacyInventoryManagementSystem;
+package Source;
 
 import java.io.IOException;
 
