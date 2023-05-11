@@ -1,7 +1,8 @@
-package PharmacyInventoryManagementSystem;
+package PharmacyInventoryManagementSystem.UI_Controllers;
 
 import java.io.IOException;
 
+import PharmacyInventoryManagementSystem.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -35,12 +36,7 @@ public class P_Dashboard
     }
     public void SignOut(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("Login.fxml"));        
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Login");
-        stage.setScene(scene);
-        stage.show();  
+        Main.sceneManager.Login(event);
     }
     public void Search(ActionEvent event) throws IOException
     {

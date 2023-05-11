@@ -1,7 +1,8 @@
-package PharmacyInventoryManagementSystem;
+package PharmacyInventoryManagementSystem.UI_Controllers;
 
 import java.io.IOException;
 
+import PharmacyInventoryManagementSystem.*;
 import javafx.event.ActionEvent;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -41,7 +42,24 @@ public class A_M_P_Inventory
     }
     public void Back(ActionEvent event) throws IOException
     {
-        // back depends on which user type accessed the inventory
+        switch(Main.session.GetSignedIn())
+        {
+            case "Pharmacist":
+                Main.sceneManager.P_Dashboard(event);
+                break;
+
+            case "Manager":
+                Main.sceneManager.M_Dashboard(event);
+                break;
+
+            case "Salesman":
+                Main.sceneManager.S_Dashboard(event);
+                break;
+
+            default:
+
+                break;
+        }
     }
 
 }

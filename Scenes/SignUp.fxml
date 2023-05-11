@@ -55,9 +55,8 @@
       </PasswordField>
       <MenuButton fx:id="userType" layoutX="166.0" layoutY="272.0" mnemonicParsing="false" styleClass="Button" text="Account Type" textFill="WHITE">
         <items>
-          <MenuItem mnemonicParsing="false" onAction="#onAdmin" text="Admin" />
-          <MenuItem mnemonicParsing="false" onAction="#onManager" text="Manager" />
             <MenuItem mnemonicParsing="false" onAction="#onPharmacist" text="Pharmacist" />
+          <MenuItem mnemonicParsing="false" onAction="#onManager" text="Manager" />
             <MenuItem mnemonicParsing="false" onAction="#onSalesman" text="Salesman" />
         </items>
       </MenuButton>

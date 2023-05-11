@@ -29,10 +29,6 @@ public class SignUp
     @FXML
     MenuButton userType;
 
-    public void onAdmin() throws IOException
-    {
-        userType.setText("Admin");
-    }
     public void onPharmacist() throws IOException
     {
         userType.setText("Pharmacist");    
@@ -43,7 +39,7 @@ public class SignUp
     }
     public void onSalesman() throws IOException
     {
-        userType.setText("Salesman");    
+        userType.setText("Salesman");
     }
     public void LogIn(ActionEvent event) throws IOException
     {

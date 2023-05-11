@@ -1,11 +1,11 @@
 package PharmacyInventoryManagementSystem;
 
-public interface Unit
+public interface Item
 {
     public void insert();
 }
 
-class Medicine implements Unit
+class Medicine implements Item
 {
 
     @Override
@@ -15,7 +15,7 @@ class Medicine implements Unit
     }
 }
 
-class Cosmetic implements Unit
+class Cosmetic implements Item
 {
 
     @Override

@@ -1,7 +1,8 @@
-package PharmacyInventoryManagementSystem;
+package PharmacyInventoryManagementSystem.UI_Controllers;
 
 import java.io.IOException;
 
+import PharmacyInventoryManagementSystem.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,7 +45,7 @@ public class S_Dashboard
     }
     public void SignOut(ActionEvent event) throws IOException
     {    
-        // What does SignOut do:
+        Main.sceneManager.Login(event);
     }
     public void Search(ActionEvent event) throws IOException
     {    

@@ -35,30 +35,13 @@ public class Login
         {
             userType = Main.db.getUserType(usernameField.getText());
 
-            // System.out.print(userType);
+            System.out.print(userType);
+            Main.session.SetSignedIn(userType);
             
             switch (userType) 
-            {
-                case "Admin":
-                    root = FXMLLoader.load(getClass().getResource("P-Dashboard.fxml"));        
-                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                    scene = new Scene(root);
-                    stage.setTitle("Dashboard");
-                    stage.setScene(scene);
-                    stage.show();  
-                    break;
-                
+            {                
                 case "Pharmacist":
                     root = FXMLLoader.load(getClass().getResource("P-Dashboard.fxml"));        
-                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                    scene = new Scene(root);
-                    stage.setTitle("Dashboard");
-                    stage.setScene(scene);
-                    stage.show();  
-                    break;
-                
-                case "Salesman":
-                    root = FXMLLoader.load(getClass().getResource("S-Dashboard.fxml"));        
                     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
                     stage.setTitle("Dashboard");
@@ -74,7 +57,16 @@ public class Login
                     stage.setScene(scene);
                     stage.show();  
                     break;
-            
+                    
+                case "Salesman":
+                    root = FXMLLoader.load(getClass().getResource("S-Dashboard.fxml"));        
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setTitle("Dashboard");
+                    stage.setScene(scene);
+                    stage.show();  
+                    break;
+
                 default:
                     break;
             }

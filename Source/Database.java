@@ -53,7 +53,7 @@ public class Database
         statement.close();
         connection.close();
     }
-    public void loadUnits(Inventory inventory) throws SQLException
+    public void loadItems(Inventory inventory) throws SQLException
     {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
         Statement statement = connection.createStatement();
@@ -100,6 +100,12 @@ public class Database
     }
     public boolean Register(String username, String password, String userType) throws SQLException
     {
+        if (userType.equals("Account Type"))
+        {
+            System.out.println("Choose an Account Type");
+            return false;
+        }
+        
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
         Statement statement = connection.createStatement();
         statement.executeUpdate("INSERT INTO Accounts (username, password, accountType) VALUES ('" + username + "', '" + password + "', '" + userType + "')");

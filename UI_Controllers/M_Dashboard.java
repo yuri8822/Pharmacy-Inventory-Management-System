@@ -1,7 +1,8 @@
-package PharmacyInventoryManagementSystem;
+package PharmacyInventoryManagementSystem.UI_Controllers;
 
 import java.io.IOException;
 
+import PharmacyInventoryManagementSystem.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -15,10 +16,6 @@ public class M_Dashboard
     Scene scene;
     Parent root;
 
-    public void onButtonClick() throws IOException
-    {
-        System.out.println("Hey fam");
-    }
     public void GenerateRep(ActionEvent event) throws IOException
     {
         Parent root = FXMLLoader.load(getClass().getResource("M-GenerateRep.fxml"));        
@@ -57,12 +54,7 @@ public class M_Dashboard
     }         
     public void SignOut(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Login");
-        stage.setScene(scene);
-        stage.show();  
+        Main.sceneManager.Login(event);
     }         
     public void OpenReport(ActionEvent event) throws IOException
     {
