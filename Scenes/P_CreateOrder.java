@@ -1,4 +1,4 @@
-package UI_Controllers;
+package Scenes;
 
 import java.io.IOException;
 

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="490.0" prefWidth="860.0" style="-fx-background-color: #a3d7ca;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PharmacyInventoryManagementSystem.P_CreateOrder">
+<AnchorPane prefHeight="490.0" prefWidth="860.0" styleClass="AnchorPane" stylesheets="@../Source/Design.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.P_CreateOrder">
     <children>
         <Label layoutX="90.0" layoutY="20.0" prefHeight="35.0" prefWidth="186.0" text="Create Order">
             <font>
@@ -24,10 +24,10 @@
         <TextField layoutX="80.0" layoutY="100.0" prefWidth="200.0" promptText="Med ID" style="-fx-background-radius: 15;" />
         <TextField layoutX="80.0" layoutY="140.0" prefWidth="200.0" promptText="Formula" style="-fx-background-radius: 15;" />
         <TextField layoutX="80.0" layoutY="175.0" prefWidth="200.0" promptText="Region" style="-fx-background-radius: 15;" />
-        <Button layoutX="140.0" layoutY="220.0" mnemonicParsing="false" onAction="#Minus" prefHeight="25.0" prefWidth="30.0" text="-" />
-        <Button layoutX="270.0" layoutY="220.0" mnemonicParsing="false" onAction="#Plus" prefHeight="25.0" prefWidth="30.0" text="+" />
+        <Button layoutX="140.0" layoutY="220.0" mnemonicParsing="false" onAction="#Minus" prefHeight="25.0" prefWidth="30.0" styleClass="Button" text="-" />
+        <Button layoutX="270.0" layoutY="220.0" mnemonicParsing="false" onAction="#Plus" prefHeight="25.0" prefWidth="30.0" styleClass="Button" text="+" />
         <TextField layoutX="180.0" layoutY="220.0" prefHeight="25.0" prefWidth="70.0" promptText="Quantity" />
-      <Button layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#Back" text="Back" />
-      <Button layoutX="140.0" layoutY="270.0" mnemonicParsing="false" onAction="#Create" text="Create" />
+      <Button layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#Back" styleClass="Button" text="Back" />
+      <Button layoutX="140.0" layoutY="270.0" mnemonicParsing="false" onAction="#Create" styleClass="Button" text="Create" />
     </children>
 </AnchorPane>

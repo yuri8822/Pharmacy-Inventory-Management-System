@@ -1,7 +1,9 @@
-package Source;
+package Scenes;
 
 import java.io.IOException;
 import java.sql.SQLException;
+
+import Source.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

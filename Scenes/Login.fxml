@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="860.0" styleClass="AnchorPane" stylesheets="@Design.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PharmacyInventoryManagementSystem.Login">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="860.0" styleClass="AnchorPane" stylesheets="@../Source/Design.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.Login">
    <children>
       <Button depthTest="DISABLE" layoutX="115.0" layoutY="331.0" mnemonicParsing="false" onAction="#LogIn" prefHeight="48.0" prefWidth="148.0" styleClass="Button" text="Login" textFill="WHITE">
          <font>
@@ -31,7 +31,7 @@
             </Button>
             <ImageView fitHeight="125.0" fitWidth="292.0" layoutX="190.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/QUIX%20PHARMA.png" />
+                  <Image url="@../Resources/QUIX%20PHARMA.png" />
                </image>
             </ImageView>
             <Label layoutX="36.0" layoutY="188.0" prefHeight="85.0" prefWidth="243.0" text="Or Sign up if you haven't already" textAlignment="CENTER" textFill="WHITE" wrapText="true">

@@ -1,18 +1,12 @@
-package UI_Controllers;
+package Scenes;
 
 import java.io.IOException;
 
 import Source.*;
 import javafx.event.ActionEvent;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public class A_M_P_Inventory
 {
-    Stage stage;
-    Scene scene;
-    Parent root;
 
     public void AlertShortage(ActionEvent event) throws IOException
     {
@@ -24,7 +18,7 @@ public class A_M_P_Inventory
         // stage.setTitle("Creat Order");
         // stage.setScene(scene);
         // stage.show();  
-    }         
+    }       
     public void RestockInventory(ActionEvent event) throws IOException
     {
         // MAKE CONTROLLER AND PAGE:
@@ -61,5 +55,4 @@ public class A_M_P_Inventory
                 break;
         }
     }
-
 }

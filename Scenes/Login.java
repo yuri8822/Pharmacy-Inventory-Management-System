@@ -1,6 +1,8 @@
-package Source;
+package Scenes;
 
 import java.io.IOException;
+
+import Source.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,30 +43,15 @@ public class Login
             switch (userType) 
             {                
                 case "Pharmacist":
-                    root = FXMLLoader.load(getClass().getResource("P-Dashboard.fxml"));        
-                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                    scene = new Scene(root);
-                    stage.setTitle("Dashboard");
-                    stage.setScene(scene);
-                    stage.show();  
+                    Main.sceneManager.P_Dashboard(event);
                     break;
                 
                 case "Manager":
-                    root = FXMLLoader.load(getClass().getResource("M-Dashboard.fxml"));        
-                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                    scene = new Scene(root);
-                    stage.setTitle("Dashboard");
-                    stage.setScene(scene);
-                    stage.show();  
+                    Main.sceneManager.M_Dashboard(event);
                     break;
                     
                 case "Salesman":
-                    root = FXMLLoader.load(getClass().getResource("S-Dashboard.fxml"));        
-                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                    scene = new Scene(root);
-                    stage.setTitle("Dashboard");
-                    stage.setScene(scene);
-                    stage.show();  
+                    Main.sceneManager.S_Dashboard(event);
                     break;
 
                 default:
