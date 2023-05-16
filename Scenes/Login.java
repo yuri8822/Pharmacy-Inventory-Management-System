@@ -6,8 +6,6 @@ import Source.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
@@ -36,8 +34,6 @@ public class Login
         if (Main.db.hasUsername(usernameField.getText()))
         {
             userType = Main.db.getUserType(usernameField.getText());
-
-            System.out.print(userType);
             Main.session.SetSignedIn(userType);
             
             switch (userType) 
@@ -62,11 +58,6 @@ public class Login
     }         
     public void Signup(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));        
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Sign Up");
-        stage.setScene(scene);
-        stage.show();  
+        Main.sceneManager.SignUp(event);
     }         
 }

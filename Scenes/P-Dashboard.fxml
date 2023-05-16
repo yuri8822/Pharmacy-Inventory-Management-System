@@ -15,7 +15,7 @@
             <Font name="Century Gothic Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="45.0" layoutY="200.0" mnemonicParsing="false" onAction="#CreateOrder" prefHeight="40.0" prefWidth="150.0" styleClass="Button" text="Create Order" textFill="WHITE">
+      <Button layoutX="45.0" layoutY="200.0" mnemonicParsing="false" onAction="#RestockInventory" prefHeight="40.0" prefWidth="150.0" styleClass="Button" text="Restock Inventory" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="13.0" />
          </font>

@@ -16,14 +16,9 @@ public class P_Dashboard
     Scene scene;
     Parent root;
 
-    public void CreateOrder(ActionEvent event) throws IOException
+    public void RestockInventory(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("P-CreateOrder.fxml"));        
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Create Order");
-        stage.setScene(scene);
-        stage.show();  
+        // What will RestockInventory do:
     }         
     public void Inventory(ActionEvent event) throws IOException
     {

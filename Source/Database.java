@@ -1,6 +1,7 @@
 package Source;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,34 +20,43 @@ public class Database
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Accounts");
 
-        int i = 0;
-        while (resultSet.next())
-        {
-            if (resultSet.getString("accountType").equals("Pharmacist"))
-            {
-                Account newAccount = new Pharmacist();
-                newAccount.insert(resultSet.getString("username"), resultSet.getString("password"));
-                
-                accountsList.getList().add(newAccount);
-                accountsList.getList().get(i).DebugInfo();
-            }
-            else if (resultSet.getString("accountType").equals("Manager"))
-            {
-                Account newAccount = new Manager();
-                newAccount.insert(resultSet.getString("username"), resultSet.getString("password"));
-                
-                accountsList.getList().add(newAccount);
-                accountsList.getList().get(i).DebugInfo();
-            }
-            else if (resultSet.getString("accountType").equals("Salesman"))
-            {
-                Account newAccount = new Salesman();
-                newAccount.insert(resultSet.getString("username"), resultSet.getString("password"));
+        String username, password;
 
-                accountsList.getList().add(newAccount);
-                accountsList.getList().get(i).DebugInfo();
+        for (int i = 0; resultSet.next(); i++)
+        {
+            username = resultSet.getString("username");
+            password = resultSet.getString("password");
+
+            switch (resultSet.getString("accountType"))
+            {
+                case "Pharmacist":
+                {
+                    Account newAccount = new Pharmacist();
+                    newAccount.insert(username, password);
+                    
+                    accountsList.getList().add(newAccount);
+                    accountsList.getList().get(i).DebugInfo();
+                    break;
+                }
+                case "Manager":
+                {
+                    Account newAccount = new Manager();
+                    newAccount.insert(username, password);
+                    
+                    accountsList.getList().add(newAccount);
+                    accountsList.getList().get(i).DebugInfo();
+                    break;
+                }
+                case "Salesman":
+                {
+                    Account newAccount = new Salesman();
+                    newAccount.insert(username, password);
+                    
+                    accountsList.getList().add(newAccount);
+                    accountsList.getList().get(i).DebugInfo();
+                    break;
+                }
             }
-            i++;
         }
 
         resultSet.close();
@@ -58,8 +68,55 @@ public class Database
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Inventory");
+
+        int id;
+        String name, formula, company;
+        Date expYear, mfgYear;
         
-        // add the loading functionality here:
+        for (int i = 0; resultSet.next(); i++)
+        {
+            id = resultSet.getInt("Item_ID");
+            name = resultSet.getString("Name");
+            formula = resultSet.getString("Formula");
+            company = resultSet.getString("Company");
+            expYear = resultSet.getDate("ExpDate");
+            mfgYear = resultSet.getDate("MfgDate");
+
+            switch (resultSet.getString("Item_Type"))
+            {
+                case "Medicine":
+                {
+                    Item newItem = new Medicine();
+                    newItem.insert(id, name, formula, company, expYear, mfgYear);
+                    
+                    inventory.getList().add(newItem);
+                    inventory.getList().get(i).DebugInfo();
+                    break;
+                }
+                case "Cosmetic":
+                {
+                    Item newItem = new Cosmetic();
+                    newItem.insert(id, name, formula, company, expYear, mfgYear);
+                    
+                    inventory.getList().add(newItem);
+                    inventory.getList().get(i).DebugInfo();
+                    break;
+                }
+                case "Eatable":
+                {
+                    Item newItem = new Eatable();
+                    newItem.insert(id, name, formula, company, expYear, mfgYear);
+
+                    inventory.getList().add(newItem);
+                    inventory.getList().get(i).DebugInfo();
+                    break;
+                }
+            }
+        }
+        
+        resultSet.close();
+        statement.close();
+        connection.close();
     }
     public boolean hasUsername(String username) throws SQLException
     {
@@ -90,7 +147,7 @@ public class Database
         ResultSet resultSet = statement.executeQuery("SELECT accountType FROM Accounts WHERE username = '" + username + "'");
 
         resultSet.next();
-        String userType = resultSet.getString(1);
+        String userType = resultSet.getString("accountType");
 
         resultSet.close();
         statement.close();

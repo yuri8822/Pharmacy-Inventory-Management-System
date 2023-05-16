@@ -7,8 +7,6 @@ import Source.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -45,12 +43,7 @@ public class SignUp
     }
     public void LogIn(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));        
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Log in");
-        stage.setScene(scene);
-        stage.show();  
+        Main.sceneManager.Login(event);
     }         
     public void Register(ActionEvent event) throws IOException, SQLException
     {

@@ -4,8 +4,6 @@ import java.io.IOException;
 
 import Source.*;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -18,39 +16,19 @@ public class M_Dashboard
 
     public void GenerateRep(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("M-GenerateRep.fxml"));        
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Generate Reports");
-        stage.setScene(scene);
-        stage.show();  
+        Main.sceneManager.M_GenerateRep(event);
     }         
     public void OrderStock(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("M-OrderStock.fxml"));        
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Order Stock");
-        stage.setScene(scene);
-        stage.show();  
+        Main.sceneManager.M_OrderStock(event);
     }         
     public void ReviewFeedback(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("M-ReviewFeedback.fxml"));        
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Review Feedback");
-        stage.setScene(scene);
-        stage.show();  
+        Main.sceneManager.M_ReviewFeedback(event);
     }         
     public void ManageEmployees(ActionEvent event) throws IOException
     {
-        Parent root = FXMLLoader.load(getClass().getResource("M-ManageEmp.fxml"));        
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Manage Employees");
-        stage.setScene(scene);
-        stage.show();  
+        Main.sceneManager.M_ManageEmp(event);
     }         
     public void SignOut(ActionEvent event) throws IOException
     {
