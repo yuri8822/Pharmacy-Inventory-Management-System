@@ -5,16 +5,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Inventory
 {
     private ArrayList<Item> items;
-    private ArrayList<Item> tempItems;
+    private ObservableList<Item> tempItems;
     private int id;
     
     public Inventory() throws SQLException
     {
         items = new ArrayList<Item>();
-        tempItems = new ArrayList<Item>();
+        tempItems = FXCollections.observableArrayList();
         Main.db.loadItems(this);
         id = items.size();
     }
@@ -22,7 +25,7 @@ public class Inventory
     {
         return items;
     }
-    public ArrayList<Item> getTempList()
+    public ObservableList<Item> getTempList()
     {
         return tempItems;
     }

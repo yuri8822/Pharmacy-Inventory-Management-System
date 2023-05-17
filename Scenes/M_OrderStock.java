@@ -5,8 +5,6 @@ import java.sql.Date;
 import java.sql.SQLException;
 
 import Source.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
@@ -54,16 +52,16 @@ public class M_OrderStock
     {
         Main.inventory.AddNewItem(nameField.getText(), formulaField.getText(), companyField.getText(), itemType.getText());
 
-        // idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-        // nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        // formulaColumn.setCellValueFactory(new PropertyValueFactory<>("formula"));
-        // companyColumn.setCellValueFactory(new PropertyValueFactory<>("company"));
-        // expColumn.setCellValueFactory(new PropertyValueFactory<>("expYear"));
-        // mfgColumn.setCellValueFactory(new PropertyValueFactory<>("mfgYear"));
-        
-        // ObservableList<Item> data = FXCollections.observableArrayList(Main.inventory.getTempList());
-                
-        // table.setItems(data);
+        //Set the cell value factories for each column
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        formulaColumn.setCellValueFactory(new PropertyValueFactory<>("formula"));
+        companyColumn.setCellValueFactory(new PropertyValueFactory<>("company"));
+        expColumn.setCellValueFactory(new PropertyValueFactory<>("expYear"));
+        mfgColumn.setCellValueFactory(new PropertyValueFactory<>("mfgYear"));
+
+        //Set the items of the TableView to the ObservableList
+        table.setItems(Main.inventory.getTempList());
     }
     public void Minus(ActionEvent event) throws IOException
     {
