@@ -118,6 +118,38 @@ public class Database
         statement.close();
         connection.close();
     }
+    public void addItemstoDB(Inventory inventory) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Statement statement = connection.createStatement();
+
+        int id;
+        String name;
+        String formula;
+        String company;
+        Date expYear;
+        Date mfgYear;
+        String itemType;
+        
+        for (int i = 0; i < inventory.getTempList().size(); i++)
+        {
+            id = inventory.getTempList().get(i).getId();
+            name = inventory.getTempList().get(i).getName();
+            formula = inventory.getTempList().get(i).getFormula();
+            company = inventory.getTempList().get(i).getCompany();
+            expYear = inventory.getTempList().get(i).getExpYear();
+            mfgYear = inventory.getTempList().get(i).getMfgYear();
+            itemType = inventory.getTempList().get(i).getItemType();
+
+            statement.executeUpdate
+            (
+                "INSERT INTO Inventory VALUES ('" + id + "', '" + name + "', '" + formula + "', '" + company + "', '" + expYear + "', '" + mfgYear + "', '" + itemType + "')"
+            );
+        }
+
+        statement.close();
+        connection.close();
+    }
     public boolean hasUsername(String username) throws SQLException
     {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");

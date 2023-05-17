@@ -12,28 +12,32 @@
 
 <AnchorPane prefHeight="490.0" prefWidth="860.0" styleClass="AnchorPane" stylesheets="@../Source/Design.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.M_OrderStock">
     <children>
-        <Label layoutX="90.0" layoutY="20.0" prefHeight="35.0" prefWidth="186.0" text="Order Stock">
+        <Label layoutX="90.0" layoutY="20.0" prefHeight="35.0" prefWidth="186.0" text="Order Stock" textFill="WHITE">
             <font>
-                <Font name="System Bold" size="20.0" />
+                <Font name="System Bold" size="26.0" />
             </font>
         </Label>
-        <TableView fx:id="tableView" layoutX="430.0" layoutY="81.0" prefHeight="340.0" prefWidth="430.0" style="-fx-background-color: #62b9a7;">
+        <TableView fx:id="table" layoutX="248.0" layoutY="88.0" prefHeight="340.0" prefWidth="598.0" style="-fx-background-color: #62b9a7; -fx-background-radius: 10;">
             <columns>
-                <TableColumn fx:id="productIdColumn" prefWidth="75.0" text="Item ID" />
-                <TableColumn fx:id="productNameColumn" prefWidth="165.0" text="Name" />
-            <TableColumn prefWidth="65.0" text="Quantity" />
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="Item ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="100.0" text="Name" />
+            <TableColumn fx:id="formulaColumn" prefWidth="77.0" text="Formula" />
+            <TableColumn fx:id="companyColumn" prefWidth="88.0" text="Company" />
+            <TableColumn fx:id="expColumn" prefWidth="82.0" text="Expiry" />
+            <TableColumn fx:id="mfgColumn" prefWidth="93.0" text="Manufactured" />
+            <TableColumn fx:id="typeColumn" prefWidth="82.0" text="Type" />
             </columns>
         </TableView>
-        <TextField layoutX="80.0" layoutY="100.0" prefWidth="200.0" promptText="Item ID" style="-fx-background-radius: 15;" />
-        <TextField layoutX="80.0" layoutY="140.0" prefWidth="200.0" promptText="Formula (In case of Medicine)" style="-fx-background-radius: 15;" />
-        <TextField layoutX="80.0" layoutY="175.0" prefWidth="200.0" promptText="Region" style="-fx-background-radius: 15;" />
-        <Button layoutX="140.0" layoutY="220.0" mnemonicParsing="false" onAction="#Minus" prefHeight="25.0" prefWidth="30.0" styleClass="Button" text="-" />
-        <Button layoutX="270.0" layoutY="220.0" mnemonicParsing="false" onAction="#Plus" prefHeight="25.0" prefWidth="30.0" styleClass="Button" text="+" />
-        <TextField layoutX="180.0" layoutY="220.0" prefHeight="25.0" prefWidth="70.0" promptText="Quantity" />
-      <Button layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#Back" styleClass="Button" text="Back" />
-      <Button layoutX="140.0" layoutY="270.0" mnemonicParsing="false" onAction="#Add" styleClass="Button" text="Add" />
-      <Button layoutX="752.0" layoutY="438.0" mnemonicParsing="false" onAction="#Confirm" styleClass="Button" text="Confirm" />
-      <MenuButton fx:id="itemType" layoutX="292.0" layoutY="97.0" mnemonicParsing="false" styleClass="Button" text="Item Type">
+        <TextField fx:id="nameField" layoutX="28.0" layoutY="100.0" prefWidth="200.0" promptText="Name" style="-fx-background-radius: 15;" />
+        <TextField fx:id="formulaField" layoutX="28.0" layoutY="134.0" prefWidth="200.0" promptText="Formula (In case of Medicine)" style="-fx-background-radius: 15;" />
+        <TextField fx:id="companyField" layoutX="28.0" layoutY="169.0" prefWidth="200.0" promptText="Company" style="-fx-background-radius: 15;" />
+        <Button layoutX="50.0" layoutY="284.0" mnemonicParsing="false" onAction="#Minus" prefHeight="25.0" prefWidth="30.0" styleClass="Button" text="-" textFill="WHITE" />
+        <Button layoutX="174.0" layoutY="284.0" mnemonicParsing="false" onAction="#Plus" prefHeight="25.0" prefWidth="30.0" styleClass="Button" text="+" textFill="WHITE" />
+        <TextField layoutX="92.0" layoutY="287.0" prefHeight="25.0" prefWidth="70.0" promptText="Quantity" />
+      <Button layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#Back" styleClass="Button" text="Back" textFill="WHITE" />
+      <Button layoutX="92.0" layoutY="326.0" mnemonicParsing="false" onAction="#Add" prefHeight="31.0" prefWidth="70.0" styleClass="Button" text="Add" textFill="WHITE" />
+      <Button layoutX="752.0" layoutY="438.0" mnemonicParsing="false" onAction="#Confirm" styleClass="Button" text="Confirm" textFill="WHITE" />
+      <MenuButton fx:id="itemType" layoutX="120.0" layoutY="215.0" mnemonicParsing="false" styleClass="Button" text="Item Type" textFill="WHITE">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#OnMedicine" text="Medicine" />
           <MenuItem mnemonicParsing="false" onAction="#OnCosmetic" text="Cosmetic" />
