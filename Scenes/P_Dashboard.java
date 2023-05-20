@@ -4,8 +4,6 @@ import java.io.IOException;
 
 import Source.*;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -18,16 +16,11 @@ public class P_Dashboard
 
     public void RestockInventory(ActionEvent event) throws IOException
     {
-        // What will RestockInventory do:
+        Main.sceneManager.P_RestockInv(event);
     }         
     public void Inventory(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("A-M-P-Inventory.fxml"));        
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setTitle("Inventory");
-        stage.setScene(scene);
-        stage.show();  
+        Main.sceneManager.P_Inventory(event);
     }
     public void SignOut(ActionEvent event) throws IOException
     {

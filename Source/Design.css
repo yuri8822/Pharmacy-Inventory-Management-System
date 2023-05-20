@@ -4,6 +4,13 @@
   -fx-background-color:  #a3d7ca
 }
 
+.Heading
+{
+  -fx-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  -fx-font-style: normal;
+  -fx-font-size: 24px;
+}
+
 .Button
 {
   -fx-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;

@@ -43,6 +43,24 @@ public class SceneManager
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+    public void P_Inventory(ActionEvent event) throws IOException
+    {
+        root = FXMLLoader.load(getClass().getResource("../Scenes/P-Inventory.fxml"));
+        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        primaryStage.setTitle("Inventory");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    public void P_RestockInv(ActionEvent event) throws IOException
+    {
+        root = FXMLLoader.load(getClass().getResource("../Scenes/P-RestockInv.fxml"));
+        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        primaryStage.setTitle("Restock Inventory");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
     public void P_Dashboard(ActionEvent event) throws IOException
     {
         root = FXMLLoader.load(getClass().getResource("../Scenes/P-Dashboard.fxml"));

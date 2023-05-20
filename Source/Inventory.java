@@ -12,6 +12,7 @@ public class Inventory
 {
     private ArrayList<Item> items;
     private ObservableList<Item> tempItems;
+    private ObservableList<Item> lowItems;
     private int id;
     
     public Inventory() throws SQLException
@@ -40,8 +41,6 @@ public class Inventory
         calendar.add(Calendar.YEAR, 3);
         Date mfgDate = new Date(calendar.getTime().getTime());
 
-        System.out.print(expDate + " " + mfgDate);
-
         switch (itemType)
         {
             case "Medicine":
@@ -66,6 +65,7 @@ public class Inventory
                 break;
             }
         }
+        System.out.print("Item Added to temporary List\n");
     }
     public void ConfirmAddItems() throws SQLException
     {
