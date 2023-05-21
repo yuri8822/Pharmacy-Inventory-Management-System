@@ -54,6 +54,12 @@ public class M_OrderStock
 
     public void Add(ActionEvent event) throws IOException
     {
+        if (itemType.getText().equals("Item Type"))
+        {
+            System.out.print("Please choose an Item Type");
+            return;
+        }
+
         int Q = Integer.parseInt(quantityField.getText());
         Main.inventory.AddNewItem(nameField.getText(), formulaField.getText(), companyField.getText(), itemType.getText(), Q);
 

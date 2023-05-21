@@ -19,6 +19,7 @@ public class Inventory
     {
         items = new ArrayList<Item>();
         tempItems = FXCollections.observableArrayList();
+        lowItems = FXCollections.observableArrayList();
         Main.db.loadItems(this);
         id = items.size();
     }
@@ -91,7 +92,13 @@ public class Inventory
     }
     public void RestockLowItems() throws SQLException
     {
-        // these items should first be deleted from the database and Then added so remember that!
-        Main.db.addItemstoDB(this.lowItems);
+        // these items should first be deleted from the database and THEN added so remember that!
+        Main.db.updateItemsInDB(this.lowItems);
+        items.clear();
+        Main.db.loadItems(this);
+        lowItems.clear();
+
+        id = items.size();
+        System.out.print("All Items Restocked\n");
     }
 }

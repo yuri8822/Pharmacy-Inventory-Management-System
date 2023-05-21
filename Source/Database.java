@@ -126,7 +126,6 @@ public class Database
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
         Statement statement = connection.createStatement();
 
-        int id;
         String name;
         String formula;
         String company;
@@ -137,7 +136,6 @@ public class Database
         
         for (int i = 0; i < Items.size(); i++)
         {
-            id = Items.get(i).getId();
             name = Items.get(i).getName();
             formula = Items.get(i).getFormula();
             company = Items.get(i).getCompany();
@@ -148,12 +146,31 @@ public class Database
 
             statement.executeUpdate
             (
-                "INSERT INTO Inventory VALUES ('" + id + "', '" + name + "', '" + formula + "', '" + company + "', '" + expYear + "', '" + mfgYear + "', '" + qty + "', '" + itemType + "')"
+                "INSERT INTO Inventory VALUES (DEFAULT, '" + name + "', '" + formula + "', '" + company + "', '" + expYear + "', '" + mfgYear + "', '" + qty + "', '" + itemType + "')"
             );
         }
 
         statement.close();
         connection.close();
+    }
+    public void updateItemsInDB(ObservableList<Item> Items) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Statement statement = connection.createStatement();
+
+        int id;
+        int qty;
+
+        for (int i = 0; i < Items.size(); i++)
+        {
+            id = Items.get(i).getId();
+            qty = Items.get(i).getQty() + 10;
+
+            statement.executeUpdate
+            (
+                "UPDATE Inventory SET Qty = " + qty + " WHERE Item_ID = " + id
+            );
+        }
     }
     public boolean hasUsername(String username) throws SQLException
     {
