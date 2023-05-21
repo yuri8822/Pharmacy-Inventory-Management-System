@@ -2,6 +2,7 @@ package Scenes;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.SQLException;
 
 import Source.Item;
 import Source.Main;
@@ -53,7 +54,7 @@ public class P_RestockInv
         //Set the items of the TableView to the ObservableList
         table.setItems(Main.inventory.ScanLowItems());
     }
-    public void RestockAllItems(ActionEvent event) throws IOException
+    public void RestockAllItems(ActionEvent event) throws IOException, SQLException
     {
         Main.inventory.RestockLowItems();
     }

@@ -91,6 +91,7 @@ public class Inventory
     }
     public void RestockLowItems() throws SQLException
     {
+        // these items should first be deleted from the database and Then added so remember that!
         Main.db.addItemstoDB(this.lowItems);
     }
 }
