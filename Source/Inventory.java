@@ -30,7 +30,7 @@ public class Inventory
     {
         return tempItems;
     }
-    public void AddNewItem(String name, String formula, String company, String itemType)
+    public void AddNewItem(String name, String formula, String company, String itemType, int qty)
     {
         // generate id and dates:
         id++;
@@ -46,21 +46,21 @@ public class Inventory
             case "Medicine":
             {
                 Item item = new Medicine();
-                item.insert(id, name, formula, company, expDate, mfgDate);
+                item.insert(id, name, formula, company, expDate, mfgDate, qty);
                 tempItems.add(item);
                 break;
             }
             case "Cosmetic":
             {
                 Item item = new Cosmetic();
-                item.insert(id, name, formula, company, expDate, mfgDate);
+                item.insert(id, name, formula, company, expDate, mfgDate, qty);
                 tempItems.add(item);
                 break;
             }
             case "Eatable":
             {
                 Item item = new Eatable();
-                item.insert(id, name, formula, company, expDate, mfgDate);
+                item.insert(id, name, formula, company, expDate, mfgDate, qty);
                 tempItems.add(item);
                 break;
             }
@@ -69,11 +69,28 @@ public class Inventory
     }
     public void ConfirmAddItems() throws SQLException
     {
-        Main.db.addItemstoDB(this);
+        Main.db.addItemstoDB(this.tempItems);
         items.clear();
         Main.db.loadItems(this);
         tempItems.clear();
         
         id = items.size();
+        System.out.print("All Items added to Database\n");
+        
+    }
+    public ObservableList<Item> ScanLowItems()
+    {
+        for (int i = 0; i < items.size(); i++)
+        {
+            if (items.get(i).getQty() < 3)
+            {
+                lowItems.add(items.get(i));
+            }
+        }
+        return lowItems;
+    }
+    public void RestockLowItems() throws SQLException
+    {
+        Main.db.addItemstoDB(this.lowItems);
     }
 }

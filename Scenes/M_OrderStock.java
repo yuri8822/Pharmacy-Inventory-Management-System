@@ -29,6 +29,8 @@ public class M_OrderStock
     @FXML
     TextField companyField;
     @FXML
+    TextField quantityField;
+    @FXML
     MenuButton itemType;
 
     @FXML
@@ -47,10 +49,13 @@ public class M_OrderStock
     TableColumn<Item, Date> mfgColumn;
     @FXML
     TableColumn<Item, String> typeColumn;
+    @FXML
+    TableColumn<Item, Number> qtyColumn;
 
     public void Add(ActionEvent event) throws IOException
     {
-        Main.inventory.AddNewItem(nameField.getText(), formulaField.getText(), companyField.getText(), itemType.getText());
+        int Q = Integer.parseInt(quantityField.getText());
+        Main.inventory.AddNewItem(nameField.getText(), formulaField.getText(), companyField.getText(), itemType.getText(), Q);
 
         //Set the cell value factories for each column
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -59,17 +64,20 @@ public class M_OrderStock
         companyColumn.setCellValueFactory(new PropertyValueFactory<>("company"));
         expColumn.setCellValueFactory(new PropertyValueFactory<>("expYear"));
         mfgColumn.setCellValueFactory(new PropertyValueFactory<>("mfgYear"));
+        qtyColumn.setCellValueFactory(new PropertyValueFactory<>("qty"));
 
         //Set the items of the TableView to the ObservableList
         table.setItems(Main.inventory.getTempList());
     }
     public void Minus(ActionEvent event) throws IOException
     {
-        // What does Minus do:
+        int Q = Integer.parseInt(quantityField.getText());
+        quantityField.setText(Integer.toString(Q - 1));
     }
     public void Plus(ActionEvent event) throws IOException
     {
-        // What does Plus do:
+        int Q = Integer.parseInt(quantityField.getText());
+        quantityField.setText(Integer.toString(Q + 1));
     }
     public void Confirm(ActionEvent event) throws IOException, SQLException
     {

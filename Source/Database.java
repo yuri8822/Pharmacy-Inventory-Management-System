@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javafx.collections.ObservableList;
+
 public class Database
 {
 
@@ -69,7 +71,7 @@ public class Database
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Inventory");
 
-        int id;
+        int id, qty;
         String name, formula, company;
         Date expYear, mfgYear;
         
@@ -81,13 +83,14 @@ public class Database
             company = resultSet.getString("Company");
             expYear = resultSet.getDate("ExpDate");
             mfgYear = resultSet.getDate("MfgDate");
+            qty = resultSet.getInt("Qty");
 
             switch (resultSet.getString("Item_Type"))
             {
                 case "Medicine":
                 {
                     Item newItem = new Medicine();
-                    newItem.insert(id, name, formula, company, expYear, mfgYear);
+                    newItem.insert(id, name, formula, company, expYear, mfgYear, qty);
                     
                     inventory.getList().add(newItem);
                     inventory.getList().get(i).DebugInfo();
@@ -96,7 +99,7 @@ public class Database
                 case "Cosmetic":
                 {
                     Item newItem = new Cosmetic();
-                    newItem.insert(id, name, formula, company, expYear, mfgYear);
+                    newItem.insert(id, name, formula, company, expYear, mfgYear, qty);
                     
                     inventory.getList().add(newItem);
                     inventory.getList().get(i).DebugInfo();
@@ -105,7 +108,7 @@ public class Database
                 case "Eatable":
                 {
                     Item newItem = new Eatable();
-                    newItem.insert(id, name, formula, company, expYear, mfgYear);
+                    newItem.insert(id, name, formula, company, expYear, mfgYear, qty);
 
                     inventory.getList().add(newItem);
                     inventory.getList().get(i).DebugInfo();
@@ -118,7 +121,7 @@ public class Database
         statement.close();
         connection.close();
     }
-    public void addItemstoDB(Inventory inventory) throws SQLException
+    public void addItemstoDB(ObservableList<Item> Items) throws SQLException
     {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
         Statement statement = connection.createStatement();
@@ -130,20 +133,22 @@ public class Database
         Date expYear;
         Date mfgYear;
         String itemType;
+        int qty;
         
-        for (int i = 0; i < inventory.getTempList().size(); i++)
+        for (int i = 0; i < Items.size(); i++)
         {
-            id = inventory.getTempList().get(i).getId();
-            name = inventory.getTempList().get(i).getName();
-            formula = inventory.getTempList().get(i).getFormula();
-            company = inventory.getTempList().get(i).getCompany();
-            expYear = inventory.getTempList().get(i).getExpYear();
-            mfgYear = inventory.getTempList().get(i).getMfgYear();
-            itemType = inventory.getTempList().get(i).getItemType();
+            id = Items.get(i).getId();
+            name = Items.get(i).getName();
+            formula = Items.get(i).getFormula();
+            company = Items.get(i).getCompany();
+            expYear = Items.get(i).getExpYear();
+            mfgYear = Items.get(i).getMfgYear();
+            itemType = Items.get(i).getItemType();
+            qty = Items.get(i).getQty();
 
             statement.executeUpdate
             (
-                "INSERT INTO Inventory VALUES ('" + id + "', '" + name + "', '" + formula + "', '" + company + "', '" + expYear + "', '" + mfgYear + "', '" + itemType + "')"
+                "INSERT INTO Inventory VALUES ('" + id + "', '" + name + "', '" + formula + "', '" + company + "', '" + expYear + "', '" + mfgYear + "', '" + qty + "', '" + itemType + "')"
             );
         }
 

@@ -10,8 +10,9 @@ public class Cosmetic implements Item
     private String company;
     private Date expYear;
     private Date mfgYear;
+    private int qty;
 
-    public void insert(int id, String name, String formula, String company, Date expYear, Date mfgYear) 
+    public void insert(int id, String name, String formula, String company, Date expYear, Date mfgYear, int qty) 
     {
         this.id = id;
         this.name = name;
@@ -19,6 +20,7 @@ public class Cosmetic implements Item
         this.company = company;
         this.expYear = expYear;
         this.mfgYear = mfgYear;
+        this.qty = qty;
     }
     public void DebugInfo()
     {
@@ -30,6 +32,7 @@ public class Cosmetic implements Item
             "Company: " + company + "\n" +
             "Exp Year: " + expYear + "\n" +
             "Mfg Year: " + mfgYear + "\n" +
+            "Quantity: " + qty + "\n" +
             "Item Type: Cosmetic" + "\n\n"
         );
     }
@@ -60,5 +63,9 @@ public class Cosmetic implements Item
     public String getItemType()
     {
         return "Cosmetic";
+    }
+    public int getQty()
+    {
+        return qty;
     }
 }
