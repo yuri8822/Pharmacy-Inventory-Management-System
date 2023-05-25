@@ -76,8 +76,7 @@ public class Inventory
         tempItems.clear();
         
         id = items.size();
-        System.out.print("All Items added to Database\n");
-        
+        System.out.print("All Items added to Database\n");        
     }
     public ObservableList<Item> ScanLowItems()
     {

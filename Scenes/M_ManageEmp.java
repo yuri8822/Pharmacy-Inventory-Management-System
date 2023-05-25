@@ -4,19 +4,12 @@ import java.io.IOException;
 
 import Source.*;
 import javafx.event.ActionEvent;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public class M_ManageEmp
 {
-    Stage stage;
-    Scene scene;
-    Parent root;
-
     public void Add(ActionEvent event) throws IOException
     {
-        
+        Main.sceneManager.M_ManageEmp_Add(event);
     }
     public void Update(ActionEvent event) throws IOException
     {

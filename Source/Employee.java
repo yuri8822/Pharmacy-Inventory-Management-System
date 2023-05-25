@@ -21,4 +21,12 @@ public class Employee
             "Last Name: " + Lname + "\n\n"
         );
     }
+    public String GetFirstName()
+    {
+        return Fname;
+    }
+    public String GetLastName()
+    {
+        return Lname;
+    }
 }

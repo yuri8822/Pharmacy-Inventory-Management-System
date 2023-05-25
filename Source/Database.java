@@ -197,6 +197,25 @@ public class Database
                 "UPDATE Inventory SET Qty = " + qty + " WHERE Item_ID = " + id
             );
         }
+
+        statement.close();
+        connection.close();
+    }
+    public void AddEmployeeToDB(Employee newEmployee) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Statement statement = connection.createStatement();
+
+        String fName = newEmployee.GetFirstName();
+        String lName = newEmployee.GetLastName();
+
+        statement.executeUpdate
+        (
+            "INSERT INTO Employees VALUES (DEFAULT, '" + fName + "', '" + lName + "')"
+        );
+
+        statement.close();
+        connection.close();
     }
     public boolean hasUsername(String username) throws SQLException
     {
