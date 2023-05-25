@@ -14,10 +14,6 @@ public class M_ManageEmp
     Scene scene;
     Parent root;
 
-    public void Back(ActionEvent event) throws IOException
-    {
-        Main.sceneManager.M_Dashboard(event);
-    }  
     public void Add(ActionEvent event) throws IOException
     {
         
@@ -28,6 +24,10 @@ public class M_ManageEmp
     }
     public void Remove(ActionEvent event) throws IOException
     {
-
+        
     }
+    public void Back(ActionEvent event) throws IOException
+    {
+        Main.sceneManager.M_Dashboard(event);
+    }  
 }

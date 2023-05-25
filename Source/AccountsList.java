@@ -15,6 +15,5 @@ public class AccountsList
     public ArrayList<Account> getList()
     {
         return accounts;
-    }
-    
+    }    
 }

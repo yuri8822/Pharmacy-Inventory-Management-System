@@ -22,6 +22,13 @@ CREATE TABLE PIMS.Accounts
     accountType VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE PIMS.Employees
+(
+	Emp_ID INT PRIMARY KEY AUTO_INCREMENT,
+    First_Name VARCHAR(255),
+    Last_Name VARCHAR(255)
+);
+
 -- Inserting data into PIMS.Inventory
 INSERT INTO PIMS.Inventory VALUES
 (DEFAULT, 'Aspirin', 'C9H8O4', 'Bayer', '2024-12-31', '2021-01-01', 6, 'Medicine'),
@@ -39,3 +46,12 @@ INSERT INTO PIMS.Accounts VALUES
 ('david', '3456', 'Pharmacist'),
 ('eve', '7890', 'Manager'),
 ('frank', '1230', 'Salesman');
+
+-- Inserting data into PIMS.Employees
+INSERT INTO PIMS.Employees VALUES
+(DEFAULT, 'Ali', 'Khan'),
+(DEFAULT, 'Fatima', 'Ahmed'),
+(DEFAULT, 'Omar', 'Hassan'),
+(DEFAULT, 'Aisha', 'Malik'),
+(DEFAULT, 'Yusuf', 'Rahman'),
+(DEFAULT, 'Zara', 'Iqbal');

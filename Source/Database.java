@@ -65,6 +65,32 @@ public class Database
         statement.close();
         connection.close();
     }
+    public void loadEmployees(EmployeeList employeeList) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM Employees");
+
+        int ID;
+        String First_Name, Last_Name;
+
+        for (int i = 0; resultSet.next(); i++)
+        {
+            ID = resultSet.getInt("Emp_ID");
+            First_Name = resultSet.getString("First_Name");
+            Last_Name = resultSet.getString("Last_Name");
+
+            Employee newEmployee = new Employee();
+            newEmployee.insert(ID, First_Name, Last_Name);
+                    
+            employeeList.getList().add(newEmployee);
+            employeeList.getList().get(i).DebugInfo();
+        }
+
+        resultSet.close();
+        statement.close();
+        connection.close();
+    }
     public void loadItems(Inventory inventory) throws SQLException
     {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");

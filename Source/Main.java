@@ -10,6 +10,7 @@ public class Main extends Application
 {
     static public Database db;
     static public AccountsList accountsList;
+    static public EmployeeList employeeList;
     static public Inventory inventory;
     static public SessionManager session;
     static public SceneManager sceneManager;
@@ -23,6 +24,7 @@ public class Main extends Application
     {
         db = new Database();
         accountsList = new AccountsList();
+        employeeList = new EmployeeList();
         inventory = new Inventory();
         session = new SessionManager();
         sceneManager = new SceneManager();
