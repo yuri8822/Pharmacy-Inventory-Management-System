@@ -7,21 +7,14 @@ import java.sql.SQLException;
 import Source.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 public class M_OrderStock 
 {
-    Stage stage;
-    Scene scene;
-    Parent root;
-
     @FXML
     TextField nameField;
     @FXML
@@ -52,17 +45,8 @@ public class M_OrderStock
     @FXML
     TableColumn<Item, Number> qtyColumn;
 
-    public void Add(ActionEvent event) throws IOException
+    public void initialize()
     {
-        if (itemType.getText().equals("Item Type"))
-        {
-            System.out.print("Please choose an Item Type");
-            return;
-        }
-
-        int Q = Integer.parseInt(quantityField.getText());
-        Main.inventory.AddNewItem(nameField.getText(), formulaField.getText(), companyField.getText(), itemType.getText(), Q);
-
         //Set the cell value factories for each column
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -74,6 +58,18 @@ public class M_OrderStock
 
         //Set the items of the TableView to the ObservableList
         table.setItems(Main.inventory.getTempList());
+    }
+
+    public void Add(ActionEvent event) throws IOException
+    {
+        if (itemType.getText().equals("Item Type"))
+        {
+            System.out.print("Please choose an Item Type");
+            return;
+        }
+
+        int Q = Integer.parseInt(quantityField.getText());
+        Main.inventory.AddNewItem(nameField.getText(), formulaField.getText(), companyField.getText(), itemType.getText(), Q);
     }
     public void Minus(ActionEvent event) throws IOException
     {

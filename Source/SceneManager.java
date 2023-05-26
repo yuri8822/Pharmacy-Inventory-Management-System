@@ -115,13 +115,13 @@ public class SceneManager
         primaryStage.setTitle("Manage Employees");
         primaryStage.show();  
     }
-    public void M_ManageEmp_Add(ActionEvent event) throws IOException
+    public void M_ManageEmp_Manage(ActionEvent event) throws IOException
     {
-        Parent tempRoot = FXMLLoader.load(getClass().getResource("../Scenes/M-ManageEmp-Add.fxml"));        
+        Parent tempRoot = FXMLLoader.load(getClass().getResource("../Scenes/M-ManageEmp-Manage.fxml"));        
         Stage tempStage = new Stage();
         Scene tempScene = new Scene(tempRoot);
         tempStage.setScene(tempScene);
-        tempStage.setTitle("Add Employee");
+        tempStage.setTitle("Manage Employee");
         tempStage.show();
     }
     public void S_Dashboard(ActionEvent event) throws IOException

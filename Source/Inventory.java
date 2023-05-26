@@ -2,7 +2,6 @@ package Source;
 
 import java.sql.Date;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import javafx.collections.FXCollections;
@@ -10,20 +9,20 @@ import javafx.collections.ObservableList;
 
 public class Inventory
 {
-    private ArrayList<Item> items;
+    private ObservableList<Item> items;
     private ObservableList<Item> tempItems;
     private ObservableList<Item> lowItems;
     private int id;
     
     public Inventory() throws SQLException
     {
-        items = new ArrayList<Item>();
+        items = FXCollections.observableArrayList();
         tempItems = FXCollections.observableArrayList();
         lowItems = FXCollections.observableArrayList();
         Main.db.loadItems(this);
         id = items.size();
     }
-    public ArrayList<Item> getList()
+    public ObservableList<Item> getList()
     {
         return items;
     }
@@ -78,7 +77,7 @@ public class Inventory
         id = items.size();
         System.out.print("All Items added to Database\n");        
     }
-    public ObservableList<Item> ScanLowItems()
+    public ObservableList<Item> GetLowItems()
     {
         for (int i = 0; i < items.size(); i++)
         {

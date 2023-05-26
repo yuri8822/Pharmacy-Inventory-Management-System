@@ -7,7 +7,6 @@ import javafx.event.ActionEvent;
 
 public class M_GenerateRep
 {
-
     public void Back(ActionEvent event) throws IOException
     {
         Main.sceneManager.M_Dashboard(event);

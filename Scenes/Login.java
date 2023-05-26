@@ -6,26 +6,15 @@ import Source.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.sql.SQLException;
 
-public class Login 
+public class Login
 {
-    Stage stage;
-    Scene scene;
-    Parent root;
-
     @FXML
     TextField usernameField;
 
-    public void onButtonClick() throws IOException
-    {
-        System.out.println("Hey fam");
-    }
     public void LogIn(ActionEvent event) throws SQLException, IOException
     {
         // add cases for the other types of users too:

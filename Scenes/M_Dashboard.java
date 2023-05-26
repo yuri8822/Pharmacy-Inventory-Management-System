@@ -4,16 +4,9 @@ import java.io.IOException;
 
 import Source.*;
 import javafx.event.ActionEvent;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
 public class M_Dashboard 
 {
-    Stage stage;
-    Scene scene;
-    Parent root;
-
     public void GenerateRep(ActionEvent event) throws IOException
     {
         Main.sceneManager.M_GenerateRep(event);

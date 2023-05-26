@@ -8,9 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class M_ManageEmp_Add
+public class M_ManageEmp_Manage
 {
-
     @FXML
     TextField fNameTextField;
     @FXML
@@ -20,9 +19,12 @@ public class M_ManageEmp_Add
     {
         Main.employeeList.AddEmployee(fNameTextField.getText(), lNameTextField.getText());
     }
-    
+    public void Remove(ActionEvent event) throws IOException, SQLException
+    {
+        Main.employeeList.RemoveEmployee(fNameTextField.getText(), lNameTextField.getText());
+    }
     public void Back(ActionEvent event) throws IOException
     {
-        Main.sceneManager.M_ManageEmp(event);
+        // add a close screen option here
     }  
 }

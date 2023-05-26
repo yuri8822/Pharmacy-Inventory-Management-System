@@ -217,6 +217,22 @@ public class Database
         statement.close();
         connection.close();
     }
+    public void RemoveEmployeeFromDB(Employee newEmployee) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Statement statement = connection.createStatement();
+
+        String fName = newEmployee.GetFirstName();
+        String lName = newEmployee.GetLastName();
+
+        statement.executeUpdate
+        (
+            "DELETE FROM Employees WHERE First_Name = '" + fName + "' AND Last_Name = '" + lName + "' LIMIT 1"
+        );
+
+        statement.close();
+        connection.close();
+    }
     public boolean hasUsername(String username) throws SQLException
     {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");

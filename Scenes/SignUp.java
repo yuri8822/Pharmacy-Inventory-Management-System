@@ -7,25 +7,16 @@ import Source.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class SignUp 
 {
-    Stage stage;
-    Scene scene;
-    Parent root;
-
     @FXML
     TextField usernameField;
-
     @FXML
     PasswordField passwordField;
-
     @FXML
     MenuButton userType;
 

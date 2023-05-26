@@ -8,19 +8,12 @@ import Source.Item;
 import Source.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 public class P_RestockInv 
 {
-    Stage stage;
-    Scene scene;
-    Parent root;
-
     @FXML
     TableView<Item> table;
     @FXML
@@ -40,7 +33,7 @@ public class P_RestockInv
     @FXML
     TableColumn<Item, Number> qtyColumn;
 
-    public void Scan(ActionEvent event) throws IOException
+    public void initialize()
     {
         //Set the cell value factories for each column
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -52,7 +45,7 @@ public class P_RestockInv
         qtyColumn.setCellValueFactory(new PropertyValueFactory<>("qty"));
 
         //Set the items of the TableView to the ObservableList
-        table.setItems(Main.inventory.ScanLowItems());
+        table.setItems(Main.inventory.GetLowItems());
     }
     public void RestockAllItems(ActionEvent event) throws IOException, SQLException
     {

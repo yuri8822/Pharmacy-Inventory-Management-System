@@ -5,13 +5,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="242.0" prefWidth="393.0" styleClass="AnchorPane" stylesheets="@../Source/Design.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.M_ManageEmp_Add">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="242.0" prefWidth="393.0" styleClass="AnchorPane" stylesheets="@../Source/Design.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.M_ManageEmp_Manage">
    <children>
       <TextField fx:id="fNameTextField" layoutX="120.0" layoutY="87.0" promptText="First Name" />
       <TextField fx:id="lNameTextField" layoutX="120.0" layoutY="129.0" promptText="Last Name" />
-      <Button layoutX="228.0" layoutY="182.0" mnemonicParsing="false" onAction="#Add" styleClass="Button" text="Add" textFill="WHITE" />
+      <Button layoutX="138.0" layoutY="180.0" mnemonicParsing="false" onAction="#Add" styleClass="Button" text="Add" textFill="WHITE" />
       <Label layoutX="120.0" layoutY="28.0" styleClass="Heading" text="Add Employee" textFill="WHITE" />
       <Button layoutX="25.0" layoutY="24.0" mnemonicParsing="false" onAction="#Back" styleClass="Button" text="Back" textFill="WHITE" />
+      <Button layoutX="194.0" layoutY="180.0" mnemonicParsing="false" onAction="#Remove" styleClass="Button" text="Remove" textFill="WHITE" />
    </children>
 </AnchorPane>
