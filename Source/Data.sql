@@ -29,6 +29,12 @@ CREATE TABLE PIMS.Employees
     Last_Name VARCHAR(255)
 );
 
+CREATE TABLE PIMS.Reports
+(
+	Rep_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Content VARCHAR(255)
+);
+
 -- Inserting data into PIMS.Inventory
 INSERT INTO PIMS.Inventory VALUES
 (DEFAULT, 'Aspirin', 'C9H8O4', 'Bayer', '2024-12-31', '2021-01-01', 6, 'Medicine'),
@@ -55,3 +61,12 @@ INSERT INTO PIMS.Employees VALUES
 (DEFAULT, 'Aisha', 'Malik'),
 (DEFAULT, 'Yusuf', 'Rahman'),
 (DEFAULT, 'Zara', 'Iqbal');
+
+-- Inserting data into PIMS.Reports
+INSERT INTO PIMS.Reports VALUES
+(DEFAULT, 'Monthly inventory of drugs and supplies'),
+(DEFAULT, 'Weekly sales report of over-the-counter products'),
+(DEFAULT, 'Quarterly performance review of pharmacy staff'),
+(DEFAULT, 'Annual budget plan and forecast for the next fiscal year'),
+(DEFAULT, 'Customer satisfaction survey and feedback analysis'),
+(DEFAULT, 'Pharmacy safety and compliance audit report');

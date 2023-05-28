@@ -12,6 +12,7 @@ public class Main extends Application
     static public AccountsList accountsList;
     static public EmployeeList employeeList;
     static public Inventory inventory;
+    static public ReportList reportList;
     static public SessionManager session;
     static public SceneManager sceneManager;
 
@@ -26,6 +27,7 @@ public class Main extends Application
         accountsList = new AccountsList();
         employeeList = new EmployeeList();
         inventory = new Inventory();
+        reportList = new ReportList();
         session = new SessionManager();
         sceneManager = new SceneManager();
 

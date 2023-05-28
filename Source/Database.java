@@ -147,6 +147,32 @@ public class Database
         statement.close();
         connection.close();
     }
+    public void loadReports(ReportList reportList) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM Reports");
+
+        int ID;
+        String content;
+
+        for (int i = 0; resultSet.next(); i++)
+        {
+            ID = resultSet.getInt("Rep_ID");
+            content = resultSet.getString("Content");
+            
+
+            Report newReport = new Report();
+            newReport.insert(ID, content);
+                    
+            reportList.getList().add(newReport);
+            reportList.getList().get(i).DebugInfo();
+        }
+
+        resultSet.close();
+        statement.close();
+        connection.close();
+    }
     public void addItemstoDB(ObservableList<Item> Items) throws SQLException
     {
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
@@ -228,6 +254,36 @@ public class Database
         statement.executeUpdate
         (
             "DELETE FROM Employees WHERE First_Name = '" + fName + "' AND Last_Name = '" + lName + "' LIMIT 1"
+        );
+
+        statement.close();
+        connection.close();
+    }
+    public void AddReportToDB(Report newReport) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Statement statement = connection.createStatement();
+
+        String content = newReport.GetContent();
+
+        statement.executeUpdate
+        (
+            "INSERT INTO Reports VALUES (DEFAULT, '" + content + "')"
+        );
+
+        statement.close();
+        connection.close();
+    }
+    public void RemoveReportFromDB(Report newReport) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Statement statement = connection.createStatement();
+        
+        int id = newReport.GetID();
+
+        statement.executeUpdate
+        (
+            "DELETE FROM Reports WHERE Rep_ID = '" + id + "' LIMIT 1"
         );
 
         statement.close();
