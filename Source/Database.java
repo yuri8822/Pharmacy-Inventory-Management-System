@@ -11,14 +11,22 @@ import javafx.collections.ObservableList;
 
 public class Database
 {
+    private String _CONNECTION;
+    private String _USER;
+    private String _PASSWORD;
 
     public Database() throws ClassNotFoundException, SQLException
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
+
+        // CHANGE CONNECTION STRING HERE!
+        _CONNECTION = "jdbc:mysql://localhost:3306/PIMS";
+        _USER = "root";
+        _PASSWORD = "1234";
     }
     public void loadAccounts(AccountsList accountsList) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Accounts");
 
@@ -67,7 +75,7 @@ public class Database
     }
     public void loadEmployees(EmployeeList employeeList) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Employees");
 
@@ -93,7 +101,7 @@ public class Database
     }
     public void loadItems(Inventory inventory) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Inventory");
 
@@ -149,7 +157,7 @@ public class Database
     }
     public void loadReports(ReportList reportList) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Reports");
 
@@ -175,7 +183,7 @@ public class Database
     }
     public void addItemstoDB(ObservableList<Item> Items) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
 
         String name;
@@ -207,7 +215,7 @@ public class Database
     }
     public void updateItemsInDB(ObservableList<Item> Items) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
 
         int id;
@@ -229,7 +237,7 @@ public class Database
     }
     public void AddEmployeeToDB(Employee newEmployee) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
 
         String fName = newEmployee.GetFirstName();
@@ -245,7 +253,7 @@ public class Database
     }
     public void RemoveEmployeeFromDB(Employee newEmployee) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
 
         String fName = newEmployee.GetFirstName();
@@ -261,7 +269,7 @@ public class Database
     }
     public void AddReportToDB(Report newReport) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
 
         String content = newReport.GetContent();
@@ -276,7 +284,7 @@ public class Database
     }
     public void RemoveReportFromDB(Report newReport) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
         
         int id = newReport.GetID();
@@ -291,9 +299,10 @@ public class Database
     }
     public boolean hasUsername(String username) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT username FROM Accounts WHERE username = '" + username + "'");
+
         if (resultSet.next())
         {
             resultSet.close();
@@ -313,7 +322,7 @@ public class Database
     }
     public String getUserType(String username) throws SQLException
     {
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("SELECT accountType FROM Accounts WHERE username = '" + username + "'");
 
@@ -334,7 +343,7 @@ public class Database
             return false;
         }
         
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PIMS", "root", "1234");
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
         statement.executeUpdate("INSERT INTO Accounts (username, password, accountType) VALUES ('" + username + "', '" + password + "', '" + userType + "')");
         
