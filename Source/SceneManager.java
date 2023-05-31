@@ -43,6 +43,24 @@ public class SceneManager
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+    public void P_M_S_ViewReports(ActionEvent event) throws IOException
+    {
+        root = FXMLLoader.load(getClass().getResource("../Scenes/P-M-S-ViewReports.fxml"));
+        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        primaryStage.setTitle("View Reports");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    public void P_Dashboard(ActionEvent event) throws IOException
+    {
+        root = FXMLLoader.load(getClass().getResource("../Scenes/P-Dashboard.fxml"));
+        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();   
+        scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Dashboard");
+        primaryStage.show();
+    }
     public void P_Inventory(ActionEvent event) throws IOException
     {
         root = FXMLLoader.load(getClass().getResource("../Scenes/P-Inventory.fxml"));
@@ -61,13 +79,13 @@ public class SceneManager
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-    public void P_Dashboard(ActionEvent event) throws IOException
+    public void P_CustomOrder(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/P-Dashboard.fxml"));
-        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();   
+        root = FXMLLoader.load(getClass().getResource("../Scenes/P-CustomOrder.fxml"));
+        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
+        primaryStage.setTitle("Custom Order");
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Dashboard");
         primaryStage.show();
     }
     public void M_Dashboard(ActionEvent event) throws IOException

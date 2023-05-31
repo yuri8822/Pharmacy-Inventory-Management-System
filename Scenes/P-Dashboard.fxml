@@ -33,8 +33,18 @@
         </columns>
       </TableView>
       <Label layoutX="255.0" layoutY="69.0" text="Created Orders" />
-      <Label layoutX="84.0" layoutY="32.0" text="Pharmacist" />
+      <Label layoutX="84.0" layoutY="32.0" styleClass="Heading" text="Pharmacist" textFill="WHITE" />
       <TextField layoutX="270.0" layoutY="28.0" promptText="Search Order" />
       <Button layoutX="442.0" layoutY="28.0" mnemonicParsing="false" onAction="#Search" styleClass="Button" text="Search" />
+      <Button layoutX="652.0" layoutY="423.0" mnemonicParsing="false" onAction="#ViewRep" prefHeight="40.0" prefWidth="150.0" styleClass="Button" text="View Reports" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="45.0" layoutY="324.0" mnemonicParsing="false" onAction="#CustomOrder" prefHeight="40.0" prefWidth="150.0" styleClass="Button" text="Custom Order" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="483.0" prefWidth="860.0" styleClass="AnchorPane" stylesheets="@../Source/Design.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.P_M_S_ViewReports">
+   <children>
+      <TableView fx:id="table" layoutY="94.0" prefHeight="390.0" prefWidth="860.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="75.0" text="Rep ID" />
+            <TableColumn fx:id="contentColumn" prefWidth="778.0" text="Content" />
+         </columns>
+      </TableView>
+      <Label layoutX="122.0" layoutY="29.0" styleClass="Heading" text="View Reports" textFill="WHITE" />
+      <TextField layoutX="270.0" layoutY="28.0" promptText="Search Report" />
+      <Button layoutX="442.0" layoutY="28.0" mnemonicParsing="false" onAction="#Search" styleClass="Button" text="Search" textFill="WHITE" />
+      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#Back" prefHeight="31.0" prefWidth="60.0" styleClass="Button" text="Back" textFill="WHITE" />
+   </children>
+</AnchorPane>
