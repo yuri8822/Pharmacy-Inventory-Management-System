@@ -15,14 +15,14 @@ public class Login
     @FXML
     TextField usernameField;
 
-    public void LogIn(ActionEvent event) throws SQLException, IOException
+    public void LogIn(ActionEvent event) throws SQLException, IOException, ClassNotFoundException
     {
         // add cases for the other types of users too:
         String userType;
         
-        if (Main.db.hasUsername(usernameField.getText()))
+        if (Database.GetInstance().hasUsername(usernameField.getText()))
         {
-            userType = Main.db.getUserType(usernameField.getText());
+            userType = Database.GetInstance().getUserType(usernameField.getText());
             Main.session.SetSignedIn(userType);
             
             switch (userType) 

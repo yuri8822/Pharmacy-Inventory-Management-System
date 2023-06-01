@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 
 public class Main extends Application
 {
-    static public Database db;
     static public AccountsList accountsList;
     static public EmployeeList employeeList;
     static public Inventory inventory;
@@ -24,8 +23,6 @@ public class Main extends Application
     public static void main(String[] args) throws ClassNotFoundException, SQLException 
     {
         // Remember to convert these into Singleton Pattern!
-        
-        db = new Database();
         accountsList = new AccountsList();
         employeeList = new EmployeeList();
         inventory = new Inventory();

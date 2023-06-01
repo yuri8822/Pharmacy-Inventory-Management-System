@@ -14,12 +14,12 @@ public class Inventory
     private ObservableList<Item> lowItems;
     private int id;
     
-    public Inventory() throws SQLException
+    public Inventory() throws SQLException, ClassNotFoundException
     {
         items = FXCollections.observableArrayList();
         tempItems = FXCollections.observableArrayList();
         lowItems = FXCollections.observableArrayList();
-        Main.db.loadItems(this);
+        Database.GetInstance().loadItems(this);
         id = items.size();
     }
     public ObservableList<Item> getList()
@@ -67,11 +67,11 @@ public class Inventory
         }
         System.out.print("Item Added to temporary List\n");
     }
-    public void ConfirmAddItems() throws SQLException
+    public void ConfirmAddItems() throws SQLException, ClassNotFoundException
     {
-        Main.db.addItemstoDB(this.tempItems);
+        Database.GetInstance().addItemstoDB(this.tempItems);
         items.clear();
-        Main.db.loadItems(this);
+        Database.GetInstance().loadItems(this);
         tempItems.clear();
         
         id = items.size();
@@ -88,12 +88,12 @@ public class Inventory
         }
         return lowItems;
     }
-    public void RestockLowItems() throws SQLException
+    public void RestockLowItems() throws SQLException, ClassNotFoundException
     {
         // these items should first be deleted from the database and THEN added so remember that!
-        Main.db.updateItemsInDB(this.lowItems);
+        Database.GetInstance().updateItemsInDB(this.lowItems);
         items.clear();
-        Main.db.loadItems(this);
+        Database.GetInstance().loadItems(this);
         lowItems.clear();
 
         id = items.size();

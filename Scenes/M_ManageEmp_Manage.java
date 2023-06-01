@@ -15,11 +15,11 @@ public class M_ManageEmp_Manage
     @FXML
     TextField lNameTextField;
 
-    public void Add(ActionEvent event) throws IOException, SQLException
+    public void Add(ActionEvent event) throws IOException, SQLException, ClassNotFoundException
     {
         Main.employeeList.AddEmployee(fNameTextField.getText(), lNameTextField.getText());
     }
-    public void Remove(ActionEvent event) throws IOException, SQLException
+    public void Remove(ActionEvent event) throws IOException, SQLException, ClassNotFoundException
     {
         Main.employeeList.RemoveEmployee(fNameTextField.getText(), lNameTextField.getText());
     }

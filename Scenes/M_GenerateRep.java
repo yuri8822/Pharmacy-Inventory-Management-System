@@ -29,7 +29,7 @@ public class M_GenerateRep
     {
         // What will Copy_To_Clipboard do?
     }      
-    public void Generate(ActionEvent event) throws IOException, SQLException
+    public void Generate(ActionEvent event) throws IOException, SQLException, ClassNotFoundException
     {
         Main.reportList.AddReport(repContent.getText());
     }      

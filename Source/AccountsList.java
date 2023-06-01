@@ -7,10 +7,10 @@ public class AccountsList
 {
     private ArrayList<Account> accounts;
 
-    public AccountsList() throws SQLException
+    public AccountsList() throws SQLException, ClassNotFoundException
     {
         accounts = new ArrayList<Account>();
-        Main.db.loadAccounts(this);
+        Database.GetInstance().loadAccounts(this);
     }
     public ArrayList<Account> getList()
     {

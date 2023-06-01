@@ -81,7 +81,7 @@ public class M_OrderStock
         int Q = Integer.parseInt(quantityField.getText());
         quantityField.setText(Integer.toString(Q + 1));
     }
-    public void Confirm(ActionEvent event) throws IOException, SQLException
+    public void Confirm(ActionEvent event) throws IOException, SQLException, ClassNotFoundException
     {
         Main.inventory.ConfirmAddItems();
     }

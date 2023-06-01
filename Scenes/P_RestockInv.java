@@ -47,7 +47,7 @@ public class P_RestockInv
         //Set the items of the TableView to the ObservableList
         table.setItems(Main.inventory.GetLowItems());
     }
-    public void RestockAllItems(ActionEvent event) throws IOException, SQLException
+    public void RestockAllItems(ActionEvent event) throws IOException, SQLException, ClassNotFoundException
     {
         Main.inventory.RestockLowItems();
     }

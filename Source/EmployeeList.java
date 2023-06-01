@@ -10,17 +10,17 @@ public class EmployeeList
     private ObservableList<Employee> employees;
     private int id;
 
-    public EmployeeList() throws SQLException
+    public EmployeeList() throws SQLException, ClassNotFoundException
     {
         employees = FXCollections.observableArrayList();
-        Main.db.loadEmployees(this);
+        Database.GetInstance().loadEmployees(this);
         id = employees.size();
     }
     public ObservableList<Employee> getList()
     {
         return employees;
     }
-    public void AddEmployee(String fName, String lName) throws SQLException
+    public void AddEmployee(String fName, String lName) throws SQLException, ClassNotFoundException
     {
         id++;
 
@@ -28,9 +28,9 @@ public class EmployeeList
         newEmployee.insert(id, fName, lName);
         employees.add(newEmployee);
 
-        Main.db.AddEmployeeToDB(newEmployee);
+        Database.GetInstance().AddEmployeeToDB(newEmployee);
         employees.clear();
-        Main.db.loadEmployees(this);
+        Database.GetInstance().loadEmployees(this);
         
         System.out.print("Employee added to Database\n");
     }
@@ -40,7 +40,7 @@ public class EmployeeList
         
         System.out.print("Employee updated in Database\n");
     }
-    public void RemoveEmployee(String fName, String lName) throws SQLException
+    public void RemoveEmployee(String fName, String lName) throws SQLException, ClassNotFoundException
     {
         Boolean found = false;
         int index = 0;
@@ -58,7 +58,7 @@ public class EmployeeList
 
         if (found)
         {
-            Main.db.RemoveEmployeeFromDB(employees.get(index));
+            Database.GetInstance().RemoveEmployeeFromDB(employees.get(index));
             id--;
             System.out.print("Employee removed from Database\n");
         }
@@ -68,6 +68,6 @@ public class EmployeeList
         }
 
         employees.clear();
-        Main.db.loadEmployees(this);
+        Database.GetInstance().loadEmployees(this);
     }
 }

@@ -36,11 +36,10 @@ public class SignUp
     {
         Main.sceneManager.Login(event);
     }         
-    public void Register(ActionEvent event) throws IOException, SQLException
+    public void Register(ActionEvent event) throws IOException, SQLException, ClassNotFoundException
     {
         // code for what Register button does
-        Main.db.Register(usernameField.getText(), passwordField.getText(), userType.getText());
-        
+        Database.GetInstance().Register(usernameField.getText(), passwordField.getText(), userType.getText());
 
         //check for repeated Username:
         

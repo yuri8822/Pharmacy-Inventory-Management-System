@@ -11,11 +11,13 @@ import javafx.collections.ObservableList;
 
 public class Database
 {
+    private static Database db;
+    
     private String _CONNECTION;
     private String _USER;
     private String _PASSWORD;
 
-    public Database() throws ClassNotFoundException, SQLException
+    private Database() throws ClassNotFoundException, SQLException
     {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -23,6 +25,14 @@ public class Database
         _CONNECTION = "jdbc:mysql://localhost:3306/PIMS";
         _USER = "root";
         _PASSWORD = "1234";
+    }
+    public static Database GetInstance() throws ClassNotFoundException, SQLException
+    {
+        if (db == null)
+        {
+            db = new Database();
+        }
+        return db;
     }
     public void loadAccounts(AccountsList accountsList) throws SQLException
     {
