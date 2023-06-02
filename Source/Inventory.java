@@ -34,12 +34,12 @@ public class Inventory
     {
         // generate id and dates:
         id++;
-        Date expDate =  new Date(System.currentTimeMillis());
+        Date mfgDate =  new Date(System.currentTimeMillis());
        
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(expDate);
+        calendar.setTime(mfgDate);
         calendar.add(Calendar.YEAR, 3);
-        Date mfgDate = new Date(calendar.getTime().getTime());
+        Date expDate = new Date(calendar.getTime().getTime());
 
         switch (itemType)
         {

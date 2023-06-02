@@ -61,9 +61,9 @@ public class SceneManager
         primaryStage.setTitle("Dashboard");
         primaryStage.show();
     }
-    public void P_Inventory(ActionEvent event) throws IOException
+    public void P_M_S_Inventory(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/P-Inventory.fxml"));
+        root = FXMLLoader.load(getClass().getResource("../Scenes/P-M-S-Inventory.fxml"));
         primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         primaryStage.setTitle("Inventory");

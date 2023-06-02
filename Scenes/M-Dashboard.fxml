@@ -4,100 +4,51 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="490.0" prefWidth="860.0" styleClass="AnchorPane" stylesheets="@../Source/Design.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.M_Dashboard">
     <children>
-        <TableView layoutX="230.0" layoutY="129.0" prefHeight="302.0" prefWidth="630.0" style="-fx-background-color: #62b9a8;">
+        <TableView fx:id="table" layoutX="230.0" layoutY="129.0" prefHeight="302.0" prefWidth="630.0" style="-fx-background-color: #62b9a8;">
             <columns>
-                <TableColumn fx:id="userColumn" prefWidth="75.0" text="Report ID" />
-                <TableColumn fx:id="feedbackColumn" prefWidth="75.0" text="Subject" />
-            <TableColumn prefWidth="75.0" text="Description" />
+                <TableColumn fx:id="idColumn" prefWidth="75.0" text="Report ID" />
+            <TableColumn fx:id="contentColumn" prefWidth="75.0" text="Content" />
             </columns>
         </TableView>
-        <Label layoutX="46.0" layoutY="30.0" prefHeight="40.0" prefWidth="220.0" text="Manager" textFill="#189780">
+        <Label layoutX="46.0" layoutY="30.0" prefHeight="40.0" prefWidth="220.0" styleClass="Heading" text="Manager" textFill="WHITE">
          <font>
             <Font name="Gill Sans MT Bold" size="24.0" />
          </font></Label>
-      <Button depthTest="DISABLE" layoutX="31.0" layoutY="170.0" mnemonicParsing="false" onAction="#GenerateRep" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Generate Reports" textFill="WHITE">
+      <Button depthTest="DISABLE" layoutX="31.0" layoutY="170.0" mnemonicParsing="false" onAction="#GenerateRep" prefHeight="48.0" prefWidth="155.0" styleClass="Button" text="Generate Reports" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="13.0" />
          </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant azimuth="61.55" elevation="111.21" />
-               </light>
-            </Lighting>
-         </effect>
       </Button>
-      <Button depthTest="DISABLE" layoutX="31.0" layoutY="227.0" mnemonicParsing="false" onAction="#OrderStock" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Order Stock" textFill="WHITE">
+      <Button depthTest="DISABLE" layoutX="31.0" layoutY="227.0" mnemonicParsing="false" onAction="#OrderStock" prefHeight="48.0" prefWidth="155.0" styleClass="Button" text="Order Stock" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="13.0" />
          </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant azimuth="61.55" elevation="111.21" />
-               </light>
-            </Lighting>
-         </effect>
       </Button>
-      <Button depthTest="DISABLE" layoutX="31.0" layoutY="341.0" mnemonicParsing="false" onAction="#ManageEmployees" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Manage Employees" textFill="WHITE">
+      <Button depthTest="DISABLE" layoutX="31.0" layoutY="341.0" mnemonicParsing="false" onAction="#ManageEmployees" prefHeight="48.0" prefWidth="155.0" styleClass="Button" text="Manage Employees" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="13.0" />
          </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant azimuth="61.55" elevation="111.21" />
-               </light>
-            </Lighting>
-         </effect>
       </Button>
-      <Button depthTest="DISABLE" layoutX="31.0" layoutY="283.0" mnemonicParsing="false" onAction="#ReviewFeedback" prefHeight="48.0" prefWidth="148.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Review Feedback" textFill="WHITE">
+      <Button depthTest="DISABLE" layoutX="31.0" layoutY="283.0" mnemonicParsing="false" onAction="#ReviewFeedback" prefHeight="48.0" prefWidth="155.0" styleClass="Button" text="Review Feedback" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="13.0" />
          </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant azimuth="61.55" elevation="111.21" />
-               </light>
-            </Lighting>
-         </effect>
       </Button>
-      <Button depthTest="DISABLE" layoutX="684.0" layoutY="439.0" mnemonicParsing="false" onAction="#OpenReport" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #59578d; -fx-background-radius: 25;" text="Open Report" textFill="WHITE">
+      <Button depthTest="DISABLE" layoutX="684.0" layoutY="439.0" mnemonicParsing="false" onAction="#OpenReport" prefHeight="31.0" prefWidth="136.0" styleClass="Button" text="Open Reports" textFill="WHITE">
          <font>
             <Font name="Century Gothic Bold" size="13.0" />
          </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <Shadow />
-               </bumpInput>
-               <light>
-                  <Light.Distant azimuth="61.55" elevation="111.21" />
-               </light>
-            </Lighting>
-         </effect>
       </Button>
-      <Button layoutX="378.0" layoutY="442.0" mnemonicParsing="false" onAction="#SignOut" styleClass="Button" text="Sign Out" />
+      <Button layoutX="378.0" layoutY="442.0" mnemonicParsing="false" onAction="#SignOut" styleClass="Button" text="Sign Out" textFill="WHITE" />
+      <Button depthTest="DISABLE" layoutX="31.0" layoutY="114.0" mnemonicParsing="false" onAction="#ShowInventory" prefHeight="48.0" prefWidth="155.0" styleClass="Button" text="View Inventory" textFill="WHITE">
+         <font>
+            <Font name="Century Gothic Bold" size="13.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

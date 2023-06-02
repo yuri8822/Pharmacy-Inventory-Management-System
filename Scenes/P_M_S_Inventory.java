@@ -2,6 +2,7 @@ package Scenes;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.SQLException;
 
 import Source.*;
 import javafx.event.ActionEvent;
@@ -10,7 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-public class P_Inventory
+public class P_M_S_Inventory
 {
     @FXML
     TableView<Item> table;
@@ -45,20 +46,27 @@ public class P_Inventory
         //Set the items of the TableView to the ObservableList
         table.setItems(Main.inventory.getList());
     }
-    public void AlertShortage(ActionEvent event) throws IOException
+    public void AlertShortage(ActionEvent event) throws IOException, ClassNotFoundException, SQLException
     {
-        // MAKE CONTROLLER AND PAGE:
-
-        // root = FXMLLoader.load(getClass().getResource("P-AlertShortage.fxml"));        
-        // stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        // scene = new Scene(root);
-        // stage.setTitle("Alert Shortage");
-        // stage.setScene(scene);
-        // stage.show();  
+        if (Main.session.GetSignedIn().equals("Pharmacist"))
+        {
+            Main.reportList.AddReport("There Are Items Low on Quantity!");
+        }
+        else
+        {
+            System.out.println("You need to be a Pharmacist in order to perform this action");
+        }
     }       
     public void RestockInventory(ActionEvent event) throws IOException
     {
-        Main.sceneManager.P_RestockInv(event);  
+        if (Main.session.GetSignedIn().equals("Pharmacist"))
+        {
+            Main.sceneManager.P_RestockInv(event);  
+        }
+        else
+        {
+            System.out.println("You need to be a Pharmacist in order to perform this action");
+        }
     }
     public void Search(ActionEvent event) throws IOException
     {
@@ -66,6 +74,23 @@ public class P_Inventory
     }
     public void Back(ActionEvent event) throws IOException
     {
-        Main.sceneManager.P_Dashboard(event);
+        switch(Main.session.GetSignedIn())
+        {
+            case "Pharmacist":
+            {
+                Main.sceneManager.P_Dashboard(event);
+                break;
+            }
+            case "Manager":
+            {
+                Main.sceneManager.M_Dashboard(event);
+                break;
+            }
+            case "Salesman":
+            {
+                Main.sceneManager.S_Dashboard(event);
+                break;
+            }
+        }
     }
 }

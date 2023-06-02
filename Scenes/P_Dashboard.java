@@ -13,7 +13,7 @@ public class P_Dashboard
     }         
     public void Inventory(ActionEvent event) throws IOException
     {
-        Main.sceneManager.P_Inventory(event);
+        Main.sceneManager.P_M_S_Inventory(event);
     }
     public void CustomOrder(ActionEvent event) throws IOException
     {

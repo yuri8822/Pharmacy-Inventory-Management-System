@@ -16,9 +16,9 @@ public class S_Dashboard
     {    
         // What page will this show:
     }
-    public void showInventory(ActionEvent event) throws IOException
+    public void ShowInventory(ActionEvent event) throws IOException
     {    
-        Main.sceneManager.P_Inventory(event);  
+        Main.sceneManager.P_M_S_Inventory(event);  
     }
     public void SignOut(ActionEvent event) throws IOException
     {    
