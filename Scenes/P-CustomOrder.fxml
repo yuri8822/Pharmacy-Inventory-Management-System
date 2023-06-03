@@ -15,19 +15,19 @@
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <TextField layoutX="126.0" layoutY="100.0" prefWidth="200.0" promptText="Name" style="-fx-background-radius: 15;" />
-      <TextField layoutX="126.0" layoutY="134.0" prefWidth="200.0" promptText="Formula (In case of Medicine)" style="-fx-background-radius: 15;" />
-      <TextField layoutX="126.0" layoutY="169.0" prefWidth="200.0" promptText="Company" style="-fx-background-radius: 15;" />
-      <Button layoutX="148.0" layoutY="284.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" styleClass="Button" text="-" textFill="WHITE" />
-      <Button layoutX="272.0" layoutY="284.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0" styleClass="Button" text="+" textFill="WHITE" />
+      <TextField fx:id="nameField" layoutX="126.0" layoutY="100.0" prefWidth="200.0" promptText="Name" style="-fx-background-radius: 15;" />
+      <TextField fx:id="formulaField" layoutX="126.0" layoutY="134.0" prefWidth="200.0" promptText="Formula (In case of Medicine)" style="-fx-background-radius: 15;" />
+      <TextField fx:id="companyField" layoutX="126.0" layoutY="169.0" prefWidth="200.0" promptText="Company" style="-fx-background-radius: 15;" />
+      <Button layoutX="148.0" layoutY="284.0" mnemonicParsing="false" onAction="#Minus" prefHeight="25.0" prefWidth="30.0" styleClass="Button" text="-" textFill="WHITE" />
+      <Button layoutX="272.0" layoutY="284.0" mnemonicParsing="false" onAction="#Plus" prefHeight="25.0" prefWidth="30.0" styleClass="Button" text="+" textFill="WHITE" />
       <TextField fx:id="quantityField" layoutX="190.0" layoutY="287.0" prefHeight="25.0" prefWidth="70.0" promptText="Quantity" />
-      <Button layoutX="14.0" layoutY="25.0" mnemonicParsing="false" styleClass="Button" text="Back" textFill="WHITE" />
-      <Button layoutX="190.0" layoutY="326.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="70.0" styleClass="Button" text="Order" textFill="WHITE" />
-      <MenuButton layoutX="218.0" layoutY="215.0" mnemonicParsing="false" styleClass="Button" text="Item Type" textFill="WHITE">
+      <Button layoutX="14.0" layoutY="25.0" mnemonicParsing="false" onAction="#Back" styleClass="Button" text="Back" textFill="WHITE" />
+      <Button layoutX="190.0" layoutY="326.0" mnemonicParsing="false" onAction="#Order" prefHeight="31.0" prefWidth="70.0" styleClass="Button" text="Order" textFill="WHITE" />
+      <MenuButton fx:id="itemType" layoutX="218.0" layoutY="215.0" mnemonicParsing="false" styleClass="Button" text="Item Type" textFill="WHITE">
          <items>
-            <MenuItem mnemonicParsing="false" text="Medicine" />
-            <MenuItem mnemonicParsing="false" text="Cosmetic" />
-            <MenuItem mnemonicParsing="false" text="Eatable" />
+            <MenuItem mnemonicParsing="false" onAction="#OnMedicine" text="Medicine" />
+            <MenuItem mnemonicParsing="false" onAction="#OnCosmetic" text="Cosmetic" />
+            <MenuItem mnemonicParsing="false" onAction="#OnEatable" text="Eatable" />
          </items>
       </MenuButton>
    </children>

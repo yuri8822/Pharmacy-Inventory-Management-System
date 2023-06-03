@@ -29,7 +29,7 @@ public class P_M_S_ViewReports
     }
     public void Search(ActionEvent event) throws IOException
     {
-        Main.sceneManager.P_RestockInv(event);
+        // what will search do?
     }
     public void Back(ActionEvent event) throws IOException
     {

@@ -30,6 +30,7 @@ public class P_Dashboard
     public void SignOut(ActionEvent event) throws IOException
     {
         Main.sceneManager.Login(event);
+        Main.session.SetSignedIn("null");
     }
     public void Search(ActionEvent event) throws IOException
     {

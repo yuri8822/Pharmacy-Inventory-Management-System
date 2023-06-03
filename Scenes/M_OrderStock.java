@@ -47,6 +47,8 @@ public class M_OrderStock
 
     public void initialize()
     {
+        quantityField.setText("3");
+        
         //Set the cell value factories for each column
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));

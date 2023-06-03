@@ -50,6 +50,7 @@ public class M_Dashboard
     public void SignOut(ActionEvent event) throws IOException
     {
         Main.sceneManager.Login(event);
+        Main.session.SetSignedIn("null");
     }         
     public void OpenReport(ActionEvent event) throws IOException
     {
