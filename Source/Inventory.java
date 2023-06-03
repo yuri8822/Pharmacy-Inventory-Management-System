@@ -12,6 +12,7 @@ public class Inventory
     private ObservableList<Item> items;
     private ObservableList<Item> tempItems;
     private ObservableList<Item> lowItems;
+    private ObservableList<Item> expItems;
     private int id;
     
     public Inventory() throws SQLException, ClassNotFoundException
@@ -19,6 +20,7 @@ public class Inventory
         items = FXCollections.observableArrayList();
         tempItems = FXCollections.observableArrayList();
         lowItems = FXCollections.observableArrayList();
+        expItems = FXCollections.observableArrayList();
         Database.GetInstance().loadItems(this);
         id = items.size();
     }
@@ -98,5 +100,27 @@ public class Inventory
 
         id = items.size();
         System.out.print("All Items Restocked\n");
+    }
+    public ObservableList<Item> GetExpItems()
+    {
+        Date currentDate =  new Date(System.currentTimeMillis());
+        for (int i = 0; i < items.size(); i++)
+        {
+            if (items.get(i).getExpYear().before(currentDate))
+            {
+                expItems.add(items.get(i));
+            }
+        }
+        return expItems;
+    }
+    public void RemoveExpItems() throws SQLException, ClassNotFoundException
+    {
+        Database.GetInstance().RemoveItemsFromDB(this.expItems);
+        items.clear();
+        Database.GetInstance().loadItems(this);
+        expItems.clear();
+
+        id = items.size();
+        System.out.print("All Items Removed\n");
     }
 }

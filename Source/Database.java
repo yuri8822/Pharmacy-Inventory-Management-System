@@ -245,6 +245,26 @@ public class Database
         statement.close();
         connection.close();
     }
+    public void RemoveItemsFromDB(ObservableList<Item> Items) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
+        Statement statement = connection.createStatement();
+
+        int id;
+
+        for (int i = 0; i < Items.size(); i++)
+        {
+            id = Items.get(i).getId();
+
+            statement.executeUpdate
+            (
+                "DELETE FROM Inventory WHERE Item_ID = " + id
+            );
+        }
+
+        statement.close();
+        connection.close();
+    }
     public void AddEmployeeToDB(Employee newEmployee) throws SQLException
     {
         Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);

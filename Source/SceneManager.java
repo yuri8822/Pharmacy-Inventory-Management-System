@@ -52,6 +52,15 @@ public class SceneManager
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+    public void P_M_S_Inventory(ActionEvent event) throws IOException
+    {
+        root = FXMLLoader.load(getClass().getResource("../Scenes/P-M-S-Inventory.fxml"));
+        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        primaryStage.setTitle("Inventory");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
     public void P_Dashboard(ActionEvent event) throws IOException
     {
         root = FXMLLoader.load(getClass().getResource("../Scenes/P-Dashboard.fxml"));
@@ -61,13 +70,13 @@ public class SceneManager
         primaryStage.setTitle("Dashboard");
         primaryStage.show();
     }
-    public void P_M_S_Inventory(ActionEvent event) throws IOException
+    public void P_CheckExp(ActionEvent event) throws IOException
     {
-        root = FXMLLoader.load(getClass().getResource("../Scenes/P-M-S-Inventory.fxml"));
-        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("../Scenes/P-CheckExp.fxml"));
+        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();   
         scene = new Scene(root);
-        primaryStage.setTitle("Inventory");
         primaryStage.setScene(scene);
+        primaryStage.setTitle("Check Expiry");
         primaryStage.show();
     }
     public void P_RestockInv(ActionEvent event) throws IOException
