@@ -25,6 +25,14 @@ public class S_Dashboard
         Main.sceneManager.Login(event);
         Main.session.SetSignedIn("null");
     }
+    public void CheckAv(ActionEvent event) throws IOException
+    {    
+        Main.sceneManager.S_CheckAv(event);
+    }
+    public void ViewRep(ActionEvent event) throws IOException
+    {    
+        Main.sceneManager.P_M_S_ViewReports(event);
+    }
     public void Search(ActionEvent event) throws IOException
     {    
         // What does Search do:

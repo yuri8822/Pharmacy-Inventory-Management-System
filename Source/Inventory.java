@@ -34,6 +34,11 @@ public class Inventory
     }
     public void AddNewItem(String name, String formula, String company, String itemType, int qty)
     {
+        if (formula.equals(""))
+        {
+            formula = "null";
+        }
+        
         // generate id and dates:
         id++;
         Date mfgDate =  new Date(System.currentTimeMillis());
@@ -122,5 +127,16 @@ public class Inventory
 
         id = items.size();
         System.out.print("All Items Removed\n");
+    }
+    public boolean SearchItem(String name, String formula, String company)
+    {
+        for (int i = 0; i < items.size(); i++)
+        {
+            if (name.equals(items.get(i).getName()) || formula.equals(items.get(i).getFormula()) || company.equals(items.get(i).getCompany()))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

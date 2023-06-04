@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="370.0" styleClass="AnchorPane" stylesheets="@../Source/Design.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scenes.S_CheckAv">
+   <children>
+      <TextField fx:id="nameField" layoutX="68.0" layoutY="100.0" prefHeight="25.0" prefWidth="234.0" promptText="Item Name" />
+      <Button layoutX="151.0" layoutY="242.0" mnemonicParsing="false" onAction="#Search" styleClass="Button" text="Search" textFill="WHITE" />
+      <TextField fx:id="companyField" layoutX="68.0" layoutY="180.0" prefHeight="25.0" prefWidth="234.0" promptText="Item Company" />
+      <TextField fx:id="formulaField" layoutX="68.0" layoutY="142.0" prefHeight="25.0" prefWidth="234.0" promptText="Item Formula (in case of Medicine)" />
+      <Label fx:id="foundLabel" layoutX="152.0" layoutY="307.0" styleClass="Heading" textFill="#509e73" />
+      <Label layoutX="98.0" layoutY="30.0" styleClass="Heading" text="Check Availability" textFill="WHITE" />
+      <Button layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#Back" styleClass="Button" text="Back" textFill="WHITE" />
+   </children>
+</AnchorPane>

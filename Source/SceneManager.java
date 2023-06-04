@@ -160,4 +160,13 @@ public class SceneManager
         primaryStage.setTitle("Dashboard");
         primaryStage.show();
     }
+    public void S_CheckAv(ActionEvent event) throws IOException
+    {
+        root = FXMLLoader.load(getClass().getResource("../Scenes/S-CheckAv.fxml"));
+        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();     
+        scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Check Availability");
+        primaryStage.show();
+    }    
 }
