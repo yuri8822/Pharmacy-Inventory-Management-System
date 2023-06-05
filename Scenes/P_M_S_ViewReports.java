@@ -21,7 +21,7 @@ public class P_M_S_ViewReports
     public void initialize()
     {
         //Set the cell value factories for each column
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         contentColumn.setCellValueFactory(new PropertyValueFactory<>("content"));
         
         //Set the items of the TableView to the ObservableList

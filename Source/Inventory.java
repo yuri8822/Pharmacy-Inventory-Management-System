@@ -60,30 +60,11 @@ public class Inventory
         // calendar.add(Calendar.YEAR, 3);
         // Date expDate = new Date(calendar.getTime().getTime());
 
-        switch (itemType)
-        {
-            case "Medicine":
-            {
-                Item item = new Medicine();
-                item.insert(id, name, formula, company, vendorItem.expYear, vendorItem.mfgYear, qty);
-                tempItems.add(item);
-                break;
-            }
-            case "Cosmetic":
-            {
-                Item item = new Cosmetic();
-                item.insert(id, name, formula, company, vendorItem.expYear, vendorItem.mfgYear, qty);
-                tempItems.add(item);
-                break;
-            }
-            case "Eatable":
-            {
-                Item item = new Eatable();
-                item.insert(id, name, formula, company, vendorItem.expYear, vendorItem.mfgYear, qty);
-                tempItems.add(item);
-                break;
-            }
-        }
+        Item item = new Item();
+        item.insert(id, name, formula, company, vendorItem.expYear, vendorItem.mfgYear, itemType, qty);
+        tempItems.add(item);
+
+       
         System.out.print("Item Added to temporary List\n");
     }
     public void ConfirmAddItems() throws SQLException, ClassNotFoundException
@@ -102,7 +83,10 @@ public class Inventory
         {
             if (items.get(i).getQty() < 3)
             {
-                lowItems.add(items.get(i));
+                if (!lowItems.contains(items.get(i)))
+                {
+                    lowItems.add(items.get(i));
+                }
             }
         }
         return lowItems;
@@ -125,7 +109,10 @@ public class Inventory
         {
             if (items.get(i).getExpYear().before(currentDate))
             {
-                expItems.add(items.get(i));
+                if (!expItems.contains(items.get(i)))
+                {
+                    expItems.add(items.get(i));
+                }
             }
         }
         return expItems;

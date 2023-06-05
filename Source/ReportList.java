@@ -54,7 +54,7 @@ public class ReportList
 
         for (int i = 0; i < reports.size(); i++)
         {
-            if (reports.get(i).GetID() == ID)
+            if (reports.get(i).getId() == ID)
             {
                 found = true;
                 index = i;

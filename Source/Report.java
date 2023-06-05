@@ -2,28 +2,28 @@ package Source;
 
 public class Report 
 {
-    private int ID;
+    private int id;
     private String content;
 
-    public void insert(int ID, String content)
+    public void insert(int id, String content)
     {
-        this.ID = ID;
+        this.id = id;
         this.content = content;
     }
     public void DebugInfo()
     {
         System.out.print
         (
-            "Report ID: " + ID + "\n" +
+            "Report ID: " + id + "\n" +
             "Content: " + content + "\n\n"
         );
     }
-    public String GetContent()
+    public String getContent()
     {
         return content;
     }
-    public int GetID()
+    public int getId()
     {
-        return ID;
+        return id;
     }
 }

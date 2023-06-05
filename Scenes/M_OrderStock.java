@@ -56,6 +56,7 @@ public class M_OrderStock
         companyColumn.setCellValueFactory(new PropertyValueFactory<>("company"));
         expColumn.setCellValueFactory(new PropertyValueFactory<>("expYear"));
         mfgColumn.setCellValueFactory(new PropertyValueFactory<>("mfgYear"));
+        typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         qtyColumn.setCellValueFactory(new PropertyValueFactory<>("qty"));
 
         //Set the items of the TableView to the ObservableList

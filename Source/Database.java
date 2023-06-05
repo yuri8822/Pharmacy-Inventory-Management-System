@@ -116,7 +116,7 @@ public class Database
         ResultSet resultSet = statement.executeQuery("SELECT * FROM Inventory");
 
         int id, qty;
-        String name, formula, company;
+        String name, formula, company, type;
         Date expYear, mfgYear;
         
         for (int i = 0; resultSet.next(); i++)
@@ -127,38 +127,14 @@ public class Database
             company = resultSet.getString("Company");
             expYear = resultSet.getDate("ExpDate");
             mfgYear = resultSet.getDate("MfgDate");
+            type = resultSet.getString("Item_Type");
             qty = resultSet.getInt("Qty");
 
-            switch (resultSet.getString("Item_Type"))
-            {
-                case "Medicine":
-                {
-                    Item newItem = new Medicine();
-                    newItem.insert(id, name, formula, company, expYear, mfgYear, qty);
-                    
-                    inventory.getList().add(newItem);
-                    inventory.getList().get(i).DebugInfo();
-                    break;
-                }
-                case "Cosmetic":
-                {
-                    Item newItem = new Cosmetic();
-                    newItem.insert(id, name, formula, company, expYear, mfgYear, qty);
-                    
-                    inventory.getList().add(newItem);
-                    inventory.getList().get(i).DebugInfo();
-                    break;
-                }
-                case "Eatable":
-                {
-                    Item newItem = new Eatable();
-                    newItem.insert(id, name, formula, company, expYear, mfgYear, qty);
-
-                    inventory.getList().add(newItem);
-                    inventory.getList().get(i).DebugInfo();
-                    break;
-                }
-            }
+            Item newItem = new Item();
+            newItem.insert(id, name, formula, company, expYear, mfgYear, type, qty);
+            
+            inventory.getList().add(newItem);
+            inventory.getList().get(i).DebugInfo();
         }
         
         resultSet.close();
@@ -211,7 +187,7 @@ public class Database
             company = Items.get(i).getCompany();
             expYear = Items.get(i).getExpYear();
             mfgYear = Items.get(i).getMfgYear();
-            itemType = Items.get(i).getItemType();
+            itemType = Items.get(i).getType();
             qty = Items.get(i).getQty();
 
             statement.executeUpdate
@@ -302,7 +278,7 @@ public class Database
         Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
 
-        String content = newReport.GetContent();
+        String content = newReport.getContent();
 
         statement.executeUpdate
         (
@@ -317,7 +293,7 @@ public class Database
         Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
         
-        int id = newReport.GetID();
+        int id = newReport.getId();
 
         statement.executeUpdate
         (
