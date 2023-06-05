@@ -11,6 +11,7 @@ public class Main extends Application
     static public AccountsList accountsList;
     static public EmployeeList employeeList;
     static public Inventory inventory;
+    static public Vendor_Handler vendorHandler;
     static public ReportList reportList;
     static public SessionManager session;
     static public SceneManager sceneManager;
@@ -20,12 +21,13 @@ public class Main extends Application
     {
         sceneManager.setup(primaryStage);
     }
-    public static void main(String[] args) throws ClassNotFoundException, SQLException 
+    public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException 
     {
         // Remember to convert these into Singleton Pattern!
         accountsList = new AccountsList();
         employeeList = new EmployeeList();
         inventory = new Inventory();
+        vendorHandler = new Vendor_Handler();
         reportList = new ReportList();
         session = new SessionManager();
         sceneManager = new SceneManager();

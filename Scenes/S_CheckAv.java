@@ -23,11 +23,11 @@ public class S_CheckAv
     {
         if (Main.inventory.SearchItem(nameField.getText(), formulaField.getText(), companyField.getText()))
         {
-            foundLabel.setText("Found!");
+            foundLabel.setText("Item Available!");
         }
         else
         {            
-            foundLabel.setText("Not Found!");
+            foundLabel.setText("Item Not Available!");
         }
     }
     public void Back(ActionEvent event) throws IOException

@@ -1,5 +1,6 @@
 package Source;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.Calendar;
@@ -14,6 +15,7 @@ public class Inventory
     private ObservableList<Item> lowItems;
     private ObservableList<Item> expItems;
     private int id;
+    private VendorItem vendorItem;
     
     public Inventory() throws SQLException, ClassNotFoundException
     {
@@ -32,42 +34,53 @@ public class Inventory
     {
         return tempItems;
     }
-    public void AddNewItem(String name, String formula, String company, String itemType, int qty)
+    public void AddNewItem(String name, String formula, String company, String itemType, int qty) throws IOException
     {
+        // Check if item exists with vendor
+        vendorItem = Main.vendorHandler.Check(name, company);
+
+        if (vendorItem == null)
+        {
+            System.out.println("Items was not found with the vendor");
+            return;
+        }
+
+        // Generate id
+        id++;
+
+        // Check for empty formula field
         if (formula.equals(""))
         {
             formula = "null";
         }
-        
-        // generate id and dates:
-        id++;
-        Date mfgDate =  new Date(System.currentTimeMillis());
-       
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(mfgDate);
-        calendar.add(Calendar.YEAR, 3);
-        Date expDate = new Date(calendar.getTime().getTime());
+
+        // So long code, you're not needed anymore :(
+        // Date mfgDate =  new Date(System.currentTimeMillis());       
+        // Calendar calendar = Calendar.getInstance();
+        // calendar.setTime(mfgDate);
+        // calendar.add(Calendar.YEAR, 3);
+        // Date expDate = new Date(calendar.getTime().getTime());
 
         switch (itemType)
         {
             case "Medicine":
             {
                 Item item = new Medicine();
-                item.insert(id, name, formula, company, expDate, mfgDate, qty);
+                item.insert(id, name, formula, company, vendorItem.expYear, vendorItem.mfgYear, qty);
                 tempItems.add(item);
                 break;
             }
             case "Cosmetic":
             {
                 Item item = new Cosmetic();
-                item.insert(id, name, formula, company, expDate, mfgDate, qty);
+                item.insert(id, name, formula, company, vendorItem.expYear, vendorItem.mfgYear, qty);
                 tempItems.add(item);
                 break;
             }
             case "Eatable":
             {
                 Item item = new Eatable();
-                item.insert(id, name, formula, company, expDate, mfgDate, qty);
+                item.insert(id, name, formula, company, vendorItem.expYear, vendorItem.mfgYear, qty);
                 tempItems.add(item);
                 break;
             }
