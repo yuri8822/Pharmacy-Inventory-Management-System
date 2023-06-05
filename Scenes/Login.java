@@ -6,6 +6,7 @@ import Source.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.sql.SQLException;
@@ -14,13 +15,15 @@ public class Login
 {
     @FXML
     TextField usernameField;
+    @FXML
+    PasswordField passwordField;
 
     public void LogIn(ActionEvent event) throws SQLException, IOException, ClassNotFoundException
     {
         // add cases for the other types of users too:
         String userType;
         
-        if (Database.GetInstance().hasUsername(usernameField.getText()))
+        if (Database.GetInstance().hasAccount(usernameField.getText(), passwordField.getText()))
         {
             userType = Database.GetInstance().getUserType(usernameField.getText());
             Main.session.SetSignedIn(userType);
@@ -43,7 +46,10 @@ public class Login
                     break;
             }
         }
-        // Add alternative code (error message that user doesnt exist):
+        else
+        {
+            System.out.println("Please check your Username or Password");
+        }
     }         
     public void Signup(ActionEvent event) throws IOException
     {

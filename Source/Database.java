@@ -303,11 +303,11 @@ public class Database
         statement.close();
         connection.close();
     }
-    public boolean hasUsername(String username) throws SQLException
+    public boolean hasAccount(String username, String password) throws SQLException
     {
         Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
         Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery("SELECT username FROM Accounts WHERE username = '" + username + "'");
+        ResultSet resultSet = statement.executeQuery("SELECT username FROM Accounts WHERE username = '" + username + "' AND password = '" + password + "'");
 
         if (resultSet.next())
         {
