@@ -167,6 +167,36 @@ public class Database
         statement.close();
         connection.close();
     }
+    public void loadReviews(ReviewList reviewList) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM Reviews");
+
+        int id;
+        String review;
+        int rating;
+        String reply;
+
+        for (int i = 0; resultSet.next(); i++)
+        {
+            id = resultSet.getInt("Rev_ID");
+            review = resultSet.getString("Review");
+            rating = resultSet.getInt("Rating");
+            reply = resultSet.getString("Reply");
+            
+
+            Review newReview = new Review();
+            newReview.insert(id, review, rating, reply);
+                    
+            reviewList.getList().add(newReview);
+            reviewList.getList().get(i).DebugInfo();
+        }
+
+        resultSet.close();
+        statement.close();
+        connection.close();
+    }
     public void addItemstoDB(ObservableList<Item> Items) throws SQLException
     {
         Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
@@ -298,6 +328,23 @@ public class Database
         statement.executeUpdate
         (
             "DELETE FROM Reports WHERE Rep_ID = '" + id + "' LIMIT 1"
+        );
+
+        statement.close();
+        connection.close();
+    }
+    public void AddReviewToDB(Review newReview) throws SQLException
+    {
+        Connection connection = DriverManager.getConnection(_CONNECTION, _USER, _PASSWORD);
+        Statement statement = connection.createStatement();
+
+        String review = newReview.getReview();
+        int rating = newReview.getRating();
+        String reply = newReview.getReply();
+
+        statement.executeUpdate
+        (
+            "INSERT INTO Reviews VALUES (DEFAULT, '" + review + "', " + rating + ", '" + reply + "')"
         );
 
         statement.close();

@@ -48,6 +48,12 @@ public class P_CustomOrder
         int Q = Integer.parseInt(quantityField.getText());
         Main.inventory.AddNewItem(nameField.getText(), formulaField.getText(), companyField.getText(), itemType.getText(), Q);
         Main.inventory.ConfirmAddItems();
+
+        nameField.clear();
+        formulaField.clear();
+        companyField.clear();
+        quantityField.setText("3");
+        itemType.setText("Item Type");
     }
     public void OnMedicine(ActionEvent event) throws IOException
     {

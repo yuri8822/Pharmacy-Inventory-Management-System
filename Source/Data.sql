@@ -1,4 +1,3 @@
-
 CREATE schema PIMS;
 
 USE PIMS;
@@ -33,6 +32,14 @@ CREATE TABLE PIMS.Reports
 (
 	Rep_ID INT PRIMARY KEY AUTO_INCREMENT,
     Content VARCHAR(255)
+);
+
+CREATE TABLE PIMS.Reviews
+(
+	Rev_ID INT PRIMARY KEY AUTO_INCREMENT,
+    Review VARCHAR(255),
+    Rating INT,
+    Reply VARCHAR(255)
 );
 
 -- Inserting data into PIMS.Inventory
@@ -70,3 +77,12 @@ INSERT INTO PIMS.Reports VALUES
 (DEFAULT, 'Annual budget plan and forecast for the next fiscal year'),
 (DEFAULT, 'Customer satisfaction survey and feedback analysis'),
 (DEFAULT, 'Pharmacy safety and compliance audit report');
+
+-- Inserting data into PIMS.Reviews
+INSERT INTO PIMS.Reviews VALUES
+(DEFAULT, 'I love working at this pharmacy. The management is supportive and the customers are friendly.', 5, 'Thank you for your kind words. We appreciate your hard work and dedication.'),
+(DEFAULT, 'This pharmacy is a nightmare. The management is incompetent and the customers are rude. I would not recommend working here.', 1, 'We are sorry to hear that you had a bad experience. We value your feedback and we will try to improve our service.'),
+(DEFAULT, 'The pharmacy is okay, but the pay is low and the hours are long. I wish they would offer more benefits and incentives.', 3, 'Thank you for your honest review. We are always looking for ways to improve our compensation and benefits for our employees.'),
+(DEFAULT, 'I enjoy working at this pharmacy. The management is helpful and the customers are loyal. I have learned a lot from this job.', 4, 'Thank you for your positive review. We are glad that you have gained valuable skills and experience from this job.'),
+(DEFAULT, 'This pharmacy is terrible. The management is abusive and the customers are demanding. I hate working here.', 2, 'We apologize for any inconvenience or discomfort that you have faced. We take your concerns seriously and we will investigate the matter.'),
+(DEFAULT, 'The pharmacy is great, but the location is not. It is hard to get to by public transportation and there is not enough parking space.', 4, 'Thank you for your feedback. We understand your frustration and we are working on finding a better location for our pharmacy.');

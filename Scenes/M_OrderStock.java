@@ -73,6 +73,12 @@ public class M_OrderStock
 
         int Q = Integer.parseInt(quantityField.getText());
         Main.inventory.AddNewItem(nameField.getText(), formulaField.getText(), companyField.getText(), itemType.getText(), Q);
+        
+        nameField.clear(); 
+        formulaField.clear();
+        companyField.clear();
+        quantityField.setText("3");  
+        itemType.setText("Item Type");
     }
     public void Minus(ActionEvent event) throws IOException
     {

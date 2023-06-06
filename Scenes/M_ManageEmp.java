@@ -22,9 +22,9 @@ public class M_ManageEmp
 
     public void initialize()
     {
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("ID"));
-        fNameColumn.setCellValueFactory(new PropertyValueFactory<>("Fname"));
-        lNameColumn.setCellValueFactory(new PropertyValueFactory<>("Lname"));
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        fNameColumn.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        lNameColumn.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         
         table.setItems(Main.employeeList.getList());
     }

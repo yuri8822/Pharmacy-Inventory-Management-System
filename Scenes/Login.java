@@ -54,5 +54,9 @@ public class Login
     public void Signup(ActionEvent event) throws IOException
     {
         Main.sceneManager.SignUp(event);
-    }         
+    }
+    public void Feedback(ActionEvent event) throws IOException
+    {
+        Main.sceneManager.E_Feedback(event);
+    }
 }

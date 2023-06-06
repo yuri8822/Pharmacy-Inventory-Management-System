@@ -12,9 +12,9 @@
         <Button layoutX="20.0" layoutY="30.0" onAction="#Back" styleClass="Button" text="Back" textFill="WHITE" />
         <TableView fx:id="table" layoutX="199.0" layoutY="127.0" prefHeight="295.0" prefWidth="630.0">
             <columns>
-                <TableColumn fx:id="idColumn" prefWidth="128.0" text="Employee ID" />
-                <TableColumn fx:id="fNameColumn" prefWidth="112.0" text="First Name" />
-                <TableColumn fx:id="lNameColumn" prefWidth="105.0" text="Last Name" />
+                <TableColumn fx:id="idColumn" prefWidth="128.0" text="ID" />
+                <TableColumn fx:id="fNameColumn" prefWidth="112.0" text="FirstName" />
+                <TableColumn fx:id="lNameColumn" prefWidth="105.0" text="LastName" />
             </columns>
         </TableView>
         <Label layoutX="121.0" layoutY="26.0" prefHeight="40.0" prefWidth="190.0" styleClass="Heading" text="Manage Employees" textFill="WHITE">

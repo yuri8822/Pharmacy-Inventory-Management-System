@@ -169,4 +169,13 @@ public class SceneManager
         primaryStage.setTitle("Check Availability");
         primaryStage.show();
     }    
+    public void E_Feedback(ActionEvent event) throws IOException
+    {
+        root = FXMLLoader.load(getClass().getResource("../Scenes/E-Feedback.fxml"));
+        primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();     
+        scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Employee Feedback");
+        primaryStage.show();
+    }    
 }

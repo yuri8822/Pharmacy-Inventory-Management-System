@@ -13,6 +13,7 @@ public class Main extends Application
     static public Inventory inventory;
     static public Vendor_Handler vendorHandler;
     static public ReportList reportList;
+    static public ReviewList reviewList;
     static public SessionManager session;
     static public SceneManager sceneManager;
 
@@ -29,6 +30,7 @@ public class Main extends Application
         inventory = new Inventory();
         vendorHandler = new Vendor_Handler();
         reportList = new ReportList();
+        reviewList = new ReviewList();
         session = new SessionManager();
         sceneManager = new SceneManager();
 

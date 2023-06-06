@@ -2,31 +2,31 @@ package Source;
 
 public class Employee 
 {
-    private int ID;
-    private String Fname;
-    private String Lname;
+    private int id;
+    private String firstName;
+    private String lastName;
 
-    public void insert(int ID, String Fname, String Lname)
+    public void insert(int id, String firstName, String lastName)
     {
-        this.ID = ID;
-        this.Fname = Fname;
-        this.Lname = Lname;
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
     public void DebugInfo()
     {
         System.out.print
         (
-            "Employee ID: " + ID + "\n" +
-            "First Name: " + Fname + "\n" +
-            "Last Name: " + Lname + "\n\n"
+            "Employee ID: " + id + "\n" +
+            "First Name: " + firstName + "\n" +
+            "Last Name: " + lastName + "\n\n"
         );
     }
     public String GetFirstName()
     {
-        return Fname;
+        return firstName;
     }
     public String GetLastName()
     {
-        return Lname;
+        return lastName;
     }
 }
