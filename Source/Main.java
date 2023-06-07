@@ -24,7 +24,7 @@ public class Main extends Application
     }
     public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException 
     {
-        // Remember to convert these into Singleton Pattern!
+        // These have been made static for convenience and mostly to ensure that all objects initiate before anything else
         accountsList = new AccountsList();
         employeeList = new EmployeeList();
         inventory = new Inventory();
